@@ -75,6 +75,11 @@ public class jFormCalc extends javax.swing.JFrame {
         jButton9.setText("9");
 
         jButton10.setText("0");
+        jButton10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton10KeyPressed(evt);
+            }
+        });
 
         jButton11.setText("C");
 
@@ -169,6 +174,10 @@ public class jFormCalc extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton10KeyPressed
+        
+    }//GEN-LAST:event_jButton10KeyPressed
 
     /**
      * @param args the command line arguments
