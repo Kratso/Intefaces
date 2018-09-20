@@ -57,16 +57,46 @@ public class jFormCalc extends javax.swing.JFrame {
         jFormattedTextNumDisplay.setName(""); // NOI18N
 
         jButton1.setText("1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("7");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +113,11 @@ public class jFormCalc extends javax.swing.JFrame {
         });
 
         jButton9.setText("9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("0");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -100,18 +135,43 @@ public class jFormCalc extends javax.swing.JFrame {
 
         jButtonEquals.setText("=");
         jButtonEquals.setEnabled(false);
+        jButtonEquals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEqualsActionPerformed(evt);
+            }
+        });
 
         jButtonPlus.setText("+");
         jButtonPlus.setEnabled(false);
+        jButtonPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlusActionPerformed(evt);
+            }
+        });
 
         jButtonMin.setText("-");
         jButtonMin.setEnabled(false);
+        jButtonMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMinActionPerformed(evt);
+            }
+        });
 
         jButtonDiv.setText("/");
         jButtonDiv.setEnabled(false);
+        jButtonDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDivActionPerformed(evt);
+            }
+        });
 
         jButtonMult.setText("*");
         jButtonMult.setEnabled(false);
+        jButtonMult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,27 +251,200 @@ public class jFormCalc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if(!jFormattedTextNumDisplay.getText().equals("0"))
-            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText()+"0");
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "0");
+        }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if(!jFormattedTextNumDisplay.getText().equals("0"))
-            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText()+"7");
-        else
-            jFormattedTextNumDisplay.setText("7");
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "7");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("7");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if(!jFormattedTextNumDisplay.getText().equals("0"))
-            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText()+"8");
-        else
-            jFormattedTextNumDisplay.setText("8");
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "8");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("8");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCActionPerformed
         jFormattedTextNumDisplay.setText("0");
+        jCalcController.clearOperation();
+        disableOps();
+        jButtonEquals.setEnabled(false);
     }//GEN-LAST:event_jButtonCActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "9");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("9");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "4");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("4");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "5");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("5");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "6");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("6");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "1");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("1");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "2");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("2");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "3");
+        } else {
+            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+                jFormattedTextNumDisplay.setText("3");
+                if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
+                    unableOps();
+                } else {
+                    jButtonEquals.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlusActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
+        jCalcController.openOperation(jCalcController.SUM_OPERATION);
+        jFormattedTextNumDisplay.setText("0");
+        disableOps();
+    }//GEN-LAST:event_jButtonPlusActionPerformed
+
+    private void jButtonMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMinActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
+        jCalcController.openOperation(jCalcController.SUB_OPERATION);
+        jFormattedTextNumDisplay.setText("0");
+        disableOps();
+    }//GEN-LAST:event_jButtonMinActionPerformed
+
+    private void jButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
+        jCalcController.openOperation(jCalcController.DIV_OPERATION);
+        jFormattedTextNumDisplay.setText("0");
+        disableOps();
+    }//GEN-LAST:event_jButtonDivActionPerformed
+
+    private void jButtonMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
+        jCalcController.openOperation(jCalcController.MULT_OPERATION);
+        jFormattedTextNumDisplay.setText("0");
+        disableOps();
+    }//GEN-LAST:event_jButtonMultActionPerformed
+
+    private void jButtonEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEqualsActionPerformed
+        jFormattedTextNumDisplay.setText(jCalcController.operate(jFormattedTextNumDisplay.getText()));
+        jButtonEquals.setEnabled(false);
+    }//GEN-LAST:event_jButtonEqualsActionPerformed
+
+    private void disableOps() {
+        jButtonDiv.setEnabled(false);
+        jButtonMin.setEnabled(false);
+        jButtonMult.setEnabled(false);
+        jButtonPlus.setEnabled(false);
+    }
+
+    private void unableOps() {
+        jButtonDiv.setEnabled(true);
+        jButtonMin.setEnabled(true);
+        jButtonMult.setEnabled(true);
+        jButtonPlus.setEnabled(true);
+    }
 
     /**
      * @param args the command line arguments
