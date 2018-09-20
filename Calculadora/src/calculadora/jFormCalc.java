@@ -46,6 +46,10 @@ public class jFormCalc extends javax.swing.JFrame {
         jButtonMin = new javax.swing.JButton();
         jButtonDiv = new javax.swing.JButton();
         jButtonMult = new javax.swing.JButton();
+        jButtonExp = new javax.swing.JButton();
+        jButtonPow = new javax.swing.JButton();
+        jButtonNRoot = new javax.swing.JButton();
+        jButtonNonNLog = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
@@ -173,6 +177,38 @@ public class jFormCalc extends javax.swing.JFrame {
             }
         });
 
+        jButtonExp.setText("x!");
+        jButtonExp.setEnabled(false);
+        jButtonExp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExpActionPerformed(evt);
+            }
+        });
+
+        jButtonPow.setText("xⁿ");
+        jButtonPow.setEnabled(false);
+        jButtonPow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPowActionPerformed(evt);
+            }
+        });
+
+        jButtonNRoot.setText("ⁿ√x");
+        jButtonNRoot.setEnabled(false);
+        jButtonNRoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNRootActionPerformed(evt);
+            }
+        });
+
+        jButtonNonNLog.setText("logₐx");
+        jButtonNonNLog.setEnabled(false);
+        jButtonNonNLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNonNLogActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,7 +216,7 @@ public class jFormCalc extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jFormattedTextNumDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextNumDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -209,11 +245,23 @@ public class jFormCalc extends javax.swing.JFrame {
                                 .addComponent(jButtonEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonMin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonNonNLog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonNRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonMin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonPow, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonExp, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,25 +273,29 @@ public class jFormCalc extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonExp, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonMin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonMin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonPow, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonNRoot, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonC, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonMult, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonNonNLog, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -436,11 +488,43 @@ public class jFormCalc extends javax.swing.JFrame {
         disableAll();
     }//GEN-LAST:event_jButtonEqualsActionPerformed
 
+    private void jButtonExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExpActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.EXP_OPERATION);
+        jFormattedTextNumDisplay.setText(jCalcController.operate(jFormattedTextNumDisplay.getText()));
+        disableAll();
+    }//GEN-LAST:event_jButtonExpActionPerformed
+
+    private void jButtonPowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPowActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.POW_OPERATION);//sets the current state to MULTIPLICATION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
+    }//GEN-LAST:event_jButtonPowActionPerformed
+
+    private void jButtonNRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNRootActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.NROOT_OPERATION);//sets the current state to MULTIPLICATION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
+    }//GEN-LAST:event_jButtonNRootActionPerformed
+
+    private void jButtonNonNLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNonNLogActionPerformed
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.NONNLOG_OPERATION);//sets the current state to MULTIPLICATION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
+    }//GEN-LAST:event_jButtonNonNLogActionPerformed
+
     private void disableOps() { //disables all operation buttons
         jButtonDiv.setEnabled(false);
         jButtonMin.setEnabled(false);
         jButtonMult.setEnabled(false);
         jButtonPlus.setEnabled(false);
+        jButtonExp.setEnabled(false);
+        jButtonPow.setEnabled(false);
+        jButtonNRoot.setEnabled(false);
+        jButtonNonNLog.setEnabled(false);
     }
     
     private void disableAll(){
@@ -476,6 +560,10 @@ public class jFormCalc extends javax.swing.JFrame {
         jButtonMin.setEnabled(true);
         jButtonMult.setEnabled(true);
         jButtonPlus.setEnabled(true);
+        jButtonExp.setEnabled(true);
+        jButtonPow.setEnabled(true);
+        jButtonNRoot.setEnabled(true);
+        jButtonNonNLog.setEnabled(true);
     }
 
     /**
@@ -529,9 +617,13 @@ public class jFormCalc extends javax.swing.JFrame {
     private javax.swing.JButton jButtonC;
     private javax.swing.JButton jButtonDiv;
     private javax.swing.JButton jButtonEquals;
+    private javax.swing.JButton jButtonExp;
     private javax.swing.JButton jButtonMin;
     private javax.swing.JButton jButtonMult;
+    private javax.swing.JButton jButtonNRoot;
+    private javax.swing.JButton jButtonNonNLog;
     private javax.swing.JButton jButtonPlus;
+    private javax.swing.JButton jButtonPow;
     private static javax.swing.JFormattedTextField jFormattedTextNumDisplay;
     // End of variables declaration//GEN-END:variables
 }

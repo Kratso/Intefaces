@@ -25,11 +25,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jFormattedTextNumDisplay" min="-2" pref="251" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Component id="jFormattedTextNumDisplay" min="-2" pref="298" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jButton1" min="-2" pref="43" max="-2" attributes="0"/>
@@ -62,14 +62,30 @@
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonMult" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="jButtonDiv" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="jButtonMin" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="jButtonPlus" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jButtonMult" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonNonNLog" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jButtonDiv" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonNRoot" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jButtonMin" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonPow" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jButtonPlus" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonExp" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,6 +100,7 @@
                   <Component id="jButton2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButton3" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButtonPlus" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jButtonExp" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -91,6 +108,7 @@
                   <Component id="jButton5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButton6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButtonMin" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jButtonPow" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -98,6 +116,7 @@
                   <Component id="jButton8" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButton9" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButtonDiv" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jButtonNRoot" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -105,6 +124,7 @@
                   <Component id="jButtonC" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButtonEquals" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jButtonMult" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jButtonNonNLog" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
@@ -256,6 +276,42 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMultActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonExp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x!"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonExpActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonPow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x&#x207f;"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPowActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonNRoot">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x207f;&#x221a;x"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNRootActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonNonNLog">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="log&#x2090;x"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNonNLogActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
