@@ -251,20 +251,20 @@ public class jFormCalc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "0");
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") ) {
+        if (!jFormattedTextNumDisplay.getText().equals("0") ) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "7");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("7");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -272,14 +272,14 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "8");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("8");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -292,17 +292,18 @@ public class jFormCalc extends javax.swing.JFrame {
         disableOps();
         jButtonEquals.setEnabled(false);
         enableNumbers();
+        //Restores base state NO OPERATION
     }//GEN-LAST:event_jButtonCActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "9");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("9");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -310,14 +311,14 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") ) {
+        if (!jFormattedTextNumDisplay.getText().equals("0") ) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "4");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("4");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -325,14 +326,14 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "5");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("5");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -340,14 +341,14 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "6");
         } else {
-           
+           //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("6");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -355,14 +356,14 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {//If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "1");
         } else {
-            
+            //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("1");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -373,11 +374,11 @@ public class jFormCalc extends javax.swing.JFrame {
         if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "2");
         } else {
-           
+           //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("2");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else {//If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -386,14 +387,14 @@ public class jFormCalc extends javax.swing.JFrame {
 
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0")) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) { //If it's not in base state
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "3");
         } else {
-           
+           //If it's in base state NO OPERATION
                 jFormattedTextNumDisplay.setText("3");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
                     enableOps();
-                } else {
+                } else { //If there is an operation pending
                     jButtonEquals.setEnabled(true);
                 }
             
@@ -401,39 +402,41 @@ public class jFormCalc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButtonPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlusActionPerformed
-        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
-        jCalcController.openOperation(jCalcController.SUM_OPERATION);
-        jFormattedTextNumDisplay.setText("0");
-        disableOps();
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.SUM_OPERATION);//sets the current state to SUMATION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
     }//GEN-LAST:event_jButtonPlusActionPerformed
 
     private void jButtonMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMinActionPerformed
-        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
-        jCalcController.openOperation(jCalcController.SUB_OPERATION);
-        jFormattedTextNumDisplay.setText("0");
-        disableOps();
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.SUB_OPERATION);//sets the current state to SUBSTRACTION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
     }//GEN-LAST:event_jButtonMinActionPerformed
 
     private void jButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivActionPerformed
-        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
-        jCalcController.openOperation(jCalcController.DIV_OPERATION);
-        jFormattedTextNumDisplay.setText("0");
-        disableOps();
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.DIV_OPERATION);//sets the current state to DIVISION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
     }//GEN-LAST:event_jButtonDivActionPerformed
 
     private void jButtonMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultActionPerformed
-        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());
-        jCalcController.openOperation(jCalcController.MULT_OPERATION);
-        jFormattedTextNumDisplay.setText("0");
-        disableOps();
+        jCalcController.setfEntry(jFormattedTextNumDisplay.getText());//stores the current value
+        jCalcController.openOperation(jCalcController.MULT_OPERATION);//sets the current state to MULTIPLICATION MODE
+        jFormattedTextNumDisplay.setText("0");//Resets the TextBox
+        disableOps();//Restores the initial state
     }//GEN-LAST:event_jButtonMultActionPerformed
 
     private void jButtonEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEqualsActionPerformed
+        //launches the method operate(String) to obtain the result depending on the current state
+        //also, disables all buttons except C
         jFormattedTextNumDisplay.setText(jCalcController.operate(jFormattedTextNumDisplay.getText()));
         disableAll();
     }//GEN-LAST:event_jButtonEqualsActionPerformed
 
-    private void disableOps() {
+    private void disableOps() { //disables all operation buttons
         jButtonDiv.setEnabled(false);
         jButtonMin.setEnabled(false);
         jButtonMult.setEnabled(false);
