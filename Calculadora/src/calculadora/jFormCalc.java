@@ -251,38 +251,38 @@ public class jFormCalc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "0");
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0") ) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "7");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("7");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "8");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("8");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -291,80 +291,81 @@ public class jFormCalc extends javax.swing.JFrame {
         jCalcController.clearOperation();
         disableOps();
         jButtonEquals.setEnabled(false);
+        enableNumbers();
     }//GEN-LAST:event_jButtonCActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "9");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("9");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0") ) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "4");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("4");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "5");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("5");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "6");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+           
                 jFormattedTextNumDisplay.setText("6");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "1");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+            
                 jFormattedTextNumDisplay.setText("1");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -372,30 +373,30 @@ public class jFormCalc extends javax.swing.JFrame {
         if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "2");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+           
                 jFormattedTextNumDisplay.setText("2");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (!jFormattedTextNumDisplay.getText().equals("0") && jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+        if (!jFormattedTextNumDisplay.getText().equals("0")) {
             jFormattedTextNumDisplay.setText(jFormattedTextNumDisplay.getText() + "3");
         } else {
-            if (jCalcController.getOperationStatus() != jCalcController.CLOSED_OPERATION) {
+           
                 jFormattedTextNumDisplay.setText("3");
                 if (jCalcController.getOperationStatus() == jCalcController.NO_OPERATION) {
-                    unableOps();
+                    enableOps();
                 } else {
                     jButtonEquals.setEnabled(true);
                 }
-            }
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -429,7 +430,7 @@ public class jFormCalc extends javax.swing.JFrame {
 
     private void jButtonEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEqualsActionPerformed
         jFormattedTextNumDisplay.setText(jCalcController.operate(jFormattedTextNumDisplay.getText()));
-        jButtonEquals.setEnabled(false);
+        disableAll();
     }//GEN-LAST:event_jButtonEqualsActionPerformed
 
     private void disableOps() {
@@ -438,8 +439,36 @@ public class jFormCalc extends javax.swing.JFrame {
         jButtonMult.setEnabled(false);
         jButtonPlus.setEnabled(false);
     }
+    
+    private void disableAll(){
+        disableOps();
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        jButton5.setEnabled(false);
+        jButton6.setEnabled(false);
+        jButton7.setEnabled(false);
+        jButton8.setEnabled(false);
+        jButton9.setEnabled(false);
+        jButton10.setEnabled(false);
+        jButtonEquals.setEnabled(false);
+    }
+    
+    private void enableNumbers(){
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(true);
+        jButton3.setEnabled(true);
+        jButton4.setEnabled(true);
+        jButton5.setEnabled(true);
+        jButton6.setEnabled(true);
+        jButton7.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButton9.setEnabled(true);
+        jButton10.setEnabled(true);
+    }
 
-    private void unableOps() {
+    private void enableOps() {
         jButtonDiv.setEnabled(true);
         jButtonMin.setEnabled(true);
         jButtonMult.setEnabled(true);
