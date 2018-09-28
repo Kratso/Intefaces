@@ -3,12 +3,13 @@
  */
 
 .mainFxmlClass {
-    -text-area  .text {
+
+}
+-text-area  .text {
     -fx-text-fill: #1ec503;
-    }
-    
-    .text-input {
+}
+
+.text-input {
     -fx-text-fill: #1ec503;
     -fx-prompt-fill: #1ec503;
-}
 }
