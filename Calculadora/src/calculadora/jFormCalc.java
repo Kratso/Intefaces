@@ -15,7 +15,7 @@ public class jFormCalc extends javax.swing.JFrame {
 
     /**
      * Creates new form jFormCalc
-     */
+     
     public jFormCalc() {
         initComponents();
     }
