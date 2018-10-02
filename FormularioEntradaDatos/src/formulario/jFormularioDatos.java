@@ -64,11 +64,22 @@ public class jFormularioDatos extends javax.swing.JFrame {
 
         jLabel1.setText("Código");
 
+        fieldCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldCodigoKeyPressed(evt);
+            }
+        });
+
         jLabel2.setText("NIF");
 
         fieldNif.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 fieldNifCaretUpdate(evt);
+            }
+        });
+        fieldNif.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldNifKeyPressed(evt);
             }
         });
 
@@ -77,21 +88,75 @@ public class jFormularioDatos extends javax.swing.JFrame {
 
         jLabel3.setText("Nombre");
 
+        fieldNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldNombreKeyPressed(evt);
+            }
+        });
+
         jLabel4.setText("Apellidos");
+
+        fieldApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldApellidoKeyPressed(evt);
+            }
+        });
 
         jLabel5.setText("Domicilio");
 
+        fieldDomicilio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldDomicilioKeyPressed(evt);
+            }
+        });
+
         jLabel6.setText("C.P.");
+
+        fieldCP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldCPKeyPressed(evt);
+            }
+        });
 
         jLabel7.setText("Localidad");
 
+        fieldLocalidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldLocalidadKeyPressed(evt);
+            }
+        });
+
         jLabel8.setText("Telefono");
+
+        fieldTlfn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldTlfnKeyPressed(evt);
+            }
+        });
 
         jLabel9.setText("Móvil");
 
+        fieldMovil.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldMovilKeyPressed(evt);
+            }
+        });
+
         jLabel10.setText("Fax");
 
+        fieldFax.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldFaxKeyPressed(evt);
+            }
+        });
+
         jLabel11.setText("e-mail");
+
+        fieldMail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fieldMailKeyPressed(evt);
+            }
+        });
 
         jLabel12.setText("Total");
 
@@ -193,7 +258,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -238,7 +303,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fieldtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(btnCancelar))
@@ -262,32 +327,28 @@ public class jFormularioDatos extends javax.swing.JFrame {
 						errorCode = validacion == jFormController.CONTENT_ERROR
 								? ERROR_IN_APELLIDOS
 								: ERROR_IN_APELLIDOS_LONG;
-						warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-						warningLabel.setEnabled(true);
-						fieldCodigo.grabFocus();
+						warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+						fieldApellido.grabFocus();
 					}
 				} else {
 					errorCode = validacion == jFormController.CONTENT_ERROR
 							? ERROR_IN_NOMBRE
 							: ERROR_IN_NAME_LONG;
-					warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-					warningLabel.setEnabled(true);
-					fieldCodigo.grabFocus();
+					warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+					fieldNombre.grabFocus();
 				}
 			} else {
 				errorCode = validacion == jFormController.CONTENT_ERROR
 						? ERROR_IN_NIF
 						: ERROR_IN_NIF_LONG;
-				warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-				warningLabel.setEnabled(true);
-				fieldCodigo.grabFocus();
+				warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+				fieldNif.grabFocus();
 			}
 		} else {
 			errorCode = validacion == jFormController.CONTENT_ERROR
 					? ERROR_IN_COD
 					: ERROR_IN_COD_LONG;
-			warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-			warningLabel.setEnabled(true);
+			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
 			fieldCodigo.grabFocus();
 		}
     }//GEN-LAST:event_btnAceptarActionPerformed
@@ -299,11 +360,78 @@ public class jFormularioDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void fieldNifCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_fieldNifCaretUpdate
-        if(jFormController.validacion(jFormController.NIF, fieldNif.getText()) == jFormController.NO_ERROR)
+		if (jFormController.validacion(jFormController.NIF, fieldNif.getText()) == jFormController.NO_ERROR) {
 			fieldLetraNif.setText(jFormController.letraNif(fieldNif.getText()));
-		else
+		} else {
 			fieldLetraNif.setText(null);
+		}
     }//GEN-LAST:event_fieldNifCaretUpdate
+
+    private void fieldCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCodigoKeyPressed
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldNif.grabFocus();
+		}
+    }//GEN-LAST:event_fieldCodigoKeyPressed
+
+    private void fieldNifKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldNifKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldNombre.grabFocus();
+		}
+    }//GEN-LAST:event_fieldNifKeyPressed
+
+    private void fieldNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldNombreKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldApellido.grabFocus();
+		}
+    }//GEN-LAST:event_fieldNombreKeyPressed
+
+    private void fieldApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldApellidoKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldDomicilio.grabFocus();
+		}
+    }//GEN-LAST:event_fieldApellidoKeyPressed
+
+    private void fieldDomicilioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldDomicilioKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldCP.grabFocus();
+		}
+    }//GEN-LAST:event_fieldDomicilioKeyPressed
+
+    private void fieldCPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCPKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldLocalidad.grabFocus();
+		}
+    }//GEN-LAST:event_fieldCPKeyPressed
+
+    private void fieldLocalidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldLocalidadKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldTlfn.grabFocus();
+		}
+    }//GEN-LAST:event_fieldLocalidadKeyPressed
+
+    private void fieldTlfnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldTlfnKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldMovil.grabFocus();
+		}
+    }//GEN-LAST:event_fieldTlfnKeyPressed
+
+    private void fieldMovilKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMovilKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldFax.grabFocus();
+		}
+    }//GEN-LAST:event_fieldMovilKeyPressed
+
+    private void fieldFaxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldFaxKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			fieldMail.grabFocus();
+		}
+    }//GEN-LAST:event_fieldFaxKeyPressed
+
+    private void fieldMailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMailKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			btnAceptar.grabFocus();
+		}
+    }//GEN-LAST:event_fieldMailKeyPressed
 
 	private void resetFields() {
 		fieldApellido.setText(null);
@@ -334,33 +462,29 @@ public class jFormularioDatos extends javax.swing.JFrame {
 						errorCode = validacion == jFormController.CONTENT_ERROR
 								? ERROR_IN_MOVIL
 								: ERROR_IN_MOVIL_LONG;
-						warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-						warningLabel.setEnabled(true);
-						fieldCodigo.grabFocus();
+						warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+						fieldMovil.grabFocus();
 					}
 				} else {
 					errorCode = validacion == jFormController.CONTENT_ERROR
 							? ERROR_IN_TLFN
 							: ERROR_IN_TLFN_LONG;
-					warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-					warningLabel.setEnabled(true);
-					fieldCodigo.grabFocus();
+					warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+					fieldTlfn.grabFocus();
 				}
 			} else {
 				errorCode = validacion == jFormController.CONTENT_ERROR
 						? ERROR_IN_LOCALIDAD
 						: ERROR_IN_LOCALIDAD_LONG;
-				warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-				warningLabel.setEnabled(true);
-				fieldCodigo.grabFocus();
+				warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+				fieldLocalidad.grabFocus();
 			}
 		} else {
 			errorCode = validacion == jFormController.CONTENT_ERROR
 					? ERROR_IN_CP
 					: ERROR_IN_CP_LONG;
-			warningLabel.setText(WARNING_MESSAGES[errorCode - 1]);
-			warningLabel.setEnabled(true);
-			fieldCodigo.grabFocus();
+			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+			fieldCP.grabFocus();
 		}
 	}
 
@@ -368,18 +492,17 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		int validacion = jFormController.validacion(jFormController.FAX, fieldFax.getText());
 		if (validacion == jFormController.NO_ERROR) {
 			errorCode = NO_ERROR;
-			warningLabel.setEnabled(false);
 		} else {
 			errorCode = validacion == jFormController.CONTENT_ERROR
 					? ERROR_IN_FAX
 					: ERROR_IN_FAX_LONG;
-			warningPane(WARNING_MESSAGES[errorCode]);
-			fieldCodigo.grabFocus();
+			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+			fieldFax.grabFocus();
 		}
 	}
-	
-	private void warningPane(String content){
-		JOptionPane.showConfirmDialog(this, "Ha ocurrido un error", content, JOptionPane.ERROR_MESSAGE);
+
+	private void warningPane(String title, String content) {
+		JOptionPane.showMessageDialog(this, title, content, JOptionPane.YES_NO_CANCEL_OPTION);
 	}
 
 	/**
@@ -441,6 +564,27 @@ public class jFormularioDatos extends javax.swing.JFrame {
 	private static final int ERROR_IN_TLFN_LONG = 17;
 	private static final int ERROR_IN_MOVIL_LONG = 18;
 	private static final int ERROR_IN_FAX_LONG = 19;
+
+	private static final String[] WARNING_TITLES = {"Error en Codigo",
+		"Error en NIF",
+		"Error en Nombre",
+		"Error en Apellidos",
+		"Error en Código Postal",
+		"Error en Localidad",
+		"Error en Teléfono",
+		"Error en Móvil",
+		"Error en Fax",
+		"Error en Email",
+		"Error en Codigo",
+		"Error en NIF",
+		"Error en Nombre",
+		"Error en Apellidos",
+		"Error en Código Postal",
+		"Error en Localidad",
+		"Error en Teléfono",
+		"Error en Móvil",
+		"Error en Fax",
+		"Error en Email"};
 
 	private static final String[] WARNING_MESSAGES = {"WARNING: \"Longitud máxima de Código: 6\"",
 		"WARNING: \"Introduzca solo números en el campo NIF\"",

@@ -63,7 +63,7 @@ public class jFormController {
         if (content.matches("[0-9]{1,8}")) {
             return NO_ERROR;
         } else {
-            return content.length() > 8 ? LONG_ERROR : CONTENT_ERROR;
+            return content.length() > 8 || content.length() < 0 ? LONG_ERROR : CONTENT_ERROR;
         }
     }
 
@@ -75,10 +75,10 @@ public class jFormController {
     }
 
     private static int testCP(String content) {
-        if(content.trim().matches("[0-9]{5}"))
+        if(content.trim().matches("[0-9]{1,5}"))
             return NO_ERROR;
         else
-            if(!content.trim().matches("[0-9]"))
+            if(!content.trim().matches("[0-9]*"))
                 return CONTENT_ERROR;
             else 
                 return LONG_ERROR;
