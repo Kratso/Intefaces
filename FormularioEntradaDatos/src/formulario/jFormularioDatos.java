@@ -64,6 +64,11 @@ public class jFormularioDatos extends javax.swing.JFrame {
 
         jLabel1.setText("Código");
 
+        fieldCodigo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                fieldCodigoFocusLost(evt);
+            }
+        });
         fieldCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fieldCodigoKeyPressed(evt);
@@ -353,7 +358,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_btnAceptarActionPerformed
 
-		private void validacioncont() {
+	private void validacioncont() {
 		int validacion = jFormController.validacion(jFormController.CP, fieldCP.getText());
 		if (validacion == jFormController.NO_ERROR) {
 			validacion = jFormController.validacion(jFormController.LOCALIDAD, fieldLocalidad.getText());
@@ -409,7 +414,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		}
 	}
 
-	
+
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 		resetFields();
 		errorCode = NO_ERROR;
@@ -431,64 +436,73 @@ public class jFormularioDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_fieldCodigoKeyPressed
 
     private void fieldNifKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldNifKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldNombre.grabFocus();
 		}
     }//GEN-LAST:event_fieldNifKeyPressed
 
     private void fieldNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldNombreKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldApellido.grabFocus();
 		}
     }//GEN-LAST:event_fieldNombreKeyPressed
 
     private void fieldApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldApellidoKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldDomicilio.grabFocus();
 		}
     }//GEN-LAST:event_fieldApellidoKeyPressed
 
     private void fieldDomicilioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldDomicilioKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldCP.grabFocus();
 		}
     }//GEN-LAST:event_fieldDomicilioKeyPressed
 
     private void fieldCPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCPKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldLocalidad.grabFocus();
 		}
     }//GEN-LAST:event_fieldCPKeyPressed
 
     private void fieldLocalidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldLocalidadKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldTlfn.grabFocus();
 		}
     }//GEN-LAST:event_fieldLocalidadKeyPressed
 
     private void fieldTlfnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldTlfnKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldMovil.grabFocus();
 		}
     }//GEN-LAST:event_fieldTlfnKeyPressed
 
     private void fieldMovilKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMovilKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldFax.grabFocus();
 		}
     }//GEN-LAST:event_fieldMovilKeyPressed
 
     private void fieldFaxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldFaxKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldMail.grabFocus();
 		}
     }//GEN-LAST:event_fieldFaxKeyPressed
 
     private void fieldMailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldMailKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			btnAceptar.grabFocus();
 		}
     }//GEN-LAST:event_fieldMailKeyPressed
+
+    private void fieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldCodigoFocusLost
+		String show = "";
+		for (int i = 0; i < 6 - fieldCodigo.getText().length(); i++) {
+			show += "0";
+		}
+		show += fieldCodigo.getText();
+		fieldCodigo.setText(show);
+    }//GEN-LAST:event_fieldCodigoFocusLost
 
 	private void resetFields() {
 		fieldApellido.setText(null);
@@ -520,7 +534,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
+				if ("Darcula".equals(info.getName())) {
 					javax.swing.UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
@@ -533,6 +547,11 @@ public class jFormularioDatos extends javax.swing.JFrame {
 			java.util.logging.Logger.getLogger(jFormularioDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(jFormularioDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		}
+		try {
+			javax.swing.UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 		//</editor-fold>
 

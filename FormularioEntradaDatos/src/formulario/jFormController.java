@@ -36,7 +36,7 @@ public class jFormController {
             case NOMBRE:
                 return testNombre(content);
             case APELLIDO:
-                return testNombre(content);
+                return testApellido(content);
             case DOMICILIO:
                 return NO_ERROR;
             case CP:
@@ -103,8 +103,12 @@ public class jFormController {
 		return letra[Integer.parseInt(text)%23];
 	}
 
-    void validacioncont() {
-    }
+	private static int testApellido(String content) {
+		        if (content.trim().matches("([A-Za-z.\\-]+[ ]?)+"))
+            return NO_ERROR;
+        else
+            return CONTENT_ERROR;
+	}
 
 
 }
