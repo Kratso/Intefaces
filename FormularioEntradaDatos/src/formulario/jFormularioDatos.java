@@ -353,6 +353,63 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_btnAceptarActionPerformed
 
+		private void validacioncont() {
+		int validacion = jFormController.validacion(jFormController.CP, fieldCP.getText());
+		if (validacion == jFormController.NO_ERROR) {
+			validacion = jFormController.validacion(jFormController.LOCALIDAD, fieldLocalidad.getText());
+			if (validacion == jFormController.NO_ERROR) {
+				validacion = jFormController.validacion(jFormController.TELEFONO, fieldTlfn.getText());
+				if (validacion == jFormController.NO_ERROR) {
+					validacion = jFormController.validacion(jFormController.MOVIL, fieldMovil.getText());
+					if (validacion == jFormController.NO_ERROR) {
+						validacionCont2();
+					} else {
+						errorCode = validacion == jFormController.CONTENT_ERROR
+								? ERROR_IN_MOVIL
+								: ERROR_IN_MOVIL_LONG;
+						warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+						fieldMovil.grabFocus();
+					}
+				} else {
+					errorCode = validacion == jFormController.CONTENT_ERROR
+							? ERROR_IN_TLFN
+							: ERROR_IN_TLFN_LONG;
+					warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+					fieldTlfn.grabFocus();
+				}
+			} else {
+				errorCode = validacion == jFormController.CONTENT_ERROR
+						? ERROR_IN_LOCALIDAD
+						: ERROR_IN_LOCALIDAD_LONG;
+				warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+				fieldLocalidad.grabFocus();
+			}
+		} else {
+			errorCode = validacion == jFormController.CONTENT_ERROR
+					? ERROR_IN_CP
+					: ERROR_IN_CP_LONG;
+			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+			fieldCP.grabFocus();
+		}
+	}
+
+	private void validacionCont2() {
+		int validacion = jFormController.validacion(jFormController.FAX, fieldFax.getText());
+		if (validacion == jFormController.NO_ERROR) {
+			errorCode = NO_ERROR;
+			JOptionPane.showMessageDialog(this, "Datos correctos", "Todos los datos introducidos son correctos", JOptionPane.YES_NO_CANCEL_OPTION);
+			resetFields();
+			fieldCodigo.grabFocus();
+		} else {
+			errorCode = validacion == jFormController.CONTENT_ERROR
+					? ERROR_IN_FAX
+					: ERROR_IN_FAX_LONG;
+			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
+			fieldFax.grabFocus();
+		}
+	}
+
+	
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 		resetFields();
 		errorCode = NO_ERROR;
@@ -448,61 +505,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		fieldNombre.setText(null);
 	}
 
-	private void validacioncont() {
-		int validacion = jFormController.validacion(jFormController.CP, fieldCP.getText());
-		if (validacion == jFormController.NO_ERROR) {
-			validacion = jFormController.validacion(jFormController.LOCALIDAD, fieldLocalidad.getText());
-			if (validacion == jFormController.NO_ERROR) {
-				validacion = jFormController.validacion(jFormController.TELEFONO, fieldTlfn.getText());
-				if (validacion == jFormController.NO_ERROR) {
-					validacion = jFormController.validacion(jFormController.MOVIL, fieldMovil.getText());
-					if (validacion == jFormController.NO_ERROR) {
-						validacionCont2();
-					} else {
-						errorCode = validacion == jFormController.CONTENT_ERROR
-								? ERROR_IN_MOVIL
-								: ERROR_IN_MOVIL_LONG;
-						warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
-						fieldMovil.grabFocus();
-					}
-				} else {
-					errorCode = validacion == jFormController.CONTENT_ERROR
-							? ERROR_IN_TLFN
-							: ERROR_IN_TLFN_LONG;
-					warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
-					fieldTlfn.grabFocus();
-				}
-			} else {
-				errorCode = validacion == jFormController.CONTENT_ERROR
-						? ERROR_IN_LOCALIDAD
-						: ERROR_IN_LOCALIDAD_LONG;
-				warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
-				fieldLocalidad.grabFocus();
-			}
-		} else {
-			errorCode = validacion == jFormController.CONTENT_ERROR
-					? ERROR_IN_CP
-					: ERROR_IN_CP_LONG;
-			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
-			fieldCP.grabFocus();
-		}
-	}
-
-	private void validacionCont2() {
-		int validacion = jFormController.validacion(jFormController.FAX, fieldFax.getText());
-		if (validacion == jFormController.NO_ERROR) {
-			errorCode = NO_ERROR;
-		} else {
-			errorCode = validacion == jFormController.CONTENT_ERROR
-					? ERROR_IN_FAX
-					: ERROR_IN_FAX_LONG;
-			warningPane(WARNING_TITLES[errorCode], WARNING_MESSAGES[errorCode]);
-			fieldFax.grabFocus();
-		}
-	}
-
 	private void warningPane(String title, String content) {
-		JOptionPane.showMessageDialog(this, title, content, JOptionPane.YES_NO_CANCEL_OPTION);
+		JOptionPane.showMessageDialog(this, content, title, JOptionPane.YES_NO_CANCEL_OPTION);
 	}
 
 	/**
@@ -565,7 +569,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 	private static final int ERROR_IN_MOVIL_LONG = 18;
 	private static final int ERROR_IN_FAX_LONG = 19;
 
-	private static final String[] WARNING_TITLES = {"Error en Codigo",
+	private static final String[] WARNING_TITLES = {"No hay Error",
+		"Error en Codigo",
 		"Error en NIF",
 		"Error en Nombre",
 		"Error en Apellidos",
@@ -586,7 +591,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		"Error en Fax",
 		"Error en Email"};
 
-	private static final String[] WARNING_MESSAGES = {"WARNING: \"Longitud máxima de Código: 6\"",
+	private static final String[] WARNING_MESSAGES = {"WARNING: No hay error",
+		"WARNING: \"Longitud de Código: entre 1 y 6\"",
 		"WARNING: \"Introduzca solo números en el campo NIF\"",
 		"WARNING: \"Introduzca un nombre válido en el campo NOMBRE\"",
 		"WARNING: \"Introduzca un apellido válido en el campo APELLIDO\"",
@@ -596,8 +602,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		"WARNING: \"Introduzca un número de teléfono válido en el campo MÓVIL\"",
 		"WARNING: \"Introduzca un número de teléfono válido en el campo FAX\"",
 		"WARNING: \"Introduzca un email válido en el campo EMAIL\"", //Added for consistent ID purposes. Unused
-		"WARNING: \"Longitud máxima de Código: 6\"",
-		"WARNING: \"Longitud máxima de NIF: 8\"",
+		"WARNING: \"Longitud de Código: entre 1 y 6\"",
+		"WARNING: \"El NIF requiere de al menos 1 carácter\"",
 		"WARNING: \"Longitud máxima de Nombre: %d\"",//Used for consistent ID purposes. Unused
 		"WARNING: \"Longitud máxima de Apellido: %d\"",
 		"WARNING: \"Longitud de CP: 5\"",

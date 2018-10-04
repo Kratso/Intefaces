@@ -55,7 +55,7 @@ public class jFormController {
     }
 
     private static int testCodigo(String content) {
-        int resul = content.length() <= 6 ? NO_ERROR : CONTENT_ERROR;
+        int resul = content.length() <= 6 && content.length() > 0 ? NO_ERROR : CONTENT_ERROR;
         return resul;
     }
 
@@ -63,7 +63,7 @@ public class jFormController {
         if (content.matches("[0-9]{1,8}")) {
             return NO_ERROR;
         } else {
-            return content.length() > 8 || content.length() < 0 ? LONG_ERROR : CONTENT_ERROR;
+            return content.length() > 8 || content.length() <= 0 ? LONG_ERROR : CONTENT_ERROR;
         }
     }
 
@@ -75,7 +75,7 @@ public class jFormController {
     }
 
     private static int testCP(String content) {
-        if(content.trim().matches("[0-9]{1,5}"))
+        if(content.trim().matches("[0-9]{5}"))
             return NO_ERROR;
         else
             if(!content.trim().matches("[0-9]*"))
