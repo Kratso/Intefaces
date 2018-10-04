@@ -318,6 +318,14 @@ public class jFormularioDatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+	
+	/*
+	*	Oh dear God why hast thou forsaken me. This code shall not be looked
+	*	upon, for it shall burn those that dare gaze its form. There is nothing 
+	*	done right about it. For love's sake, if this method block is ever 
+	*	revised, burn it to the ground and implement a loop validation, or
+	*	some other non idiotical approach.
+	*/
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
 		int validacion = jFormController.validacion(jFormController.CODIGO, fieldCodigo.getText());
 		if (validacion == jFormController.NO_ERROR) {
@@ -357,7 +365,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 			fieldCodigo.grabFocus();
 		}
     }//GEN-LAST:event_btnAceptarActionPerformed
-
+	//Same as before. Just burn it.
 	private void validacioncont() {
 		int validacion = jFormController.validacion(jFormController.CP, fieldCP.getText());
 		if (validacion == jFormController.NO_ERROR) {
@@ -397,7 +405,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 			fieldCP.grabFocus();
 		}
 	}
-
+	//Wrath has ended here.
 	private void validacionCont2() {
 		int validacion = jFormController.validacion(jFormController.FAX, fieldFax.getText());
 		if (validacion == jFormController.NO_ERROR) {
@@ -415,12 +423,14 @@ public class jFormularioDatos extends javax.swing.JFrame {
 	}
 
 
+//Form resetter
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 		resetFields();
 		errorCode = NO_ERROR;
 		fieldCodigo.grabFocus();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+//NIF letter generator on key stroke
     private void fieldNifCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_fieldNifCaretUpdate
 		if (jFormController.validacion(jFormController.NIF, fieldNif.getText()) == jFormController.NO_ERROR) {
 			fieldLetraNif.setText(jFormController.letraNif(fieldNif.getText()));
@@ -428,7 +438,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 			fieldLetraNif.setText(null);
 		}
     }//GEN-LAST:event_fieldNifCaretUpdate
-
+//Begin KeyEvent.VK_ENTER. On ENTER press, it shall focus the next field.
     private void fieldCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCodigoKeyPressed
 		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			fieldNif.grabFocus();
@@ -494,8 +504,11 @@ public class jFormularioDatos extends javax.swing.JFrame {
 			btnAceptar.grabFocus();
 		}
     }//GEN-LAST:event_fieldMailKeyPressed
-
+//End block
+	
+	
     private void fieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fieldCodigoFocusLost
+		//on loss of focus for field Codigo add 0's on the left
 		String show = "";
 		for (int i = 0; i < 6 - fieldCodigo.getText().length(); i++) {
 			show += "0";
@@ -504,7 +517,7 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		fieldCodigo.setText(show);
     }//GEN-LAST:event_fieldCodigoFocusLost
 
-	private void resetFields() {
+	private void resetFields() { //resets all text fields
 		fieldApellido.setText(null);
 		fieldCP.setText(null);
 		fieldCodigo.setText(null);
