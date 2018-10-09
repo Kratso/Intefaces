@@ -37,6 +37,7 @@ public class Ventana2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Demo de Ventanas 1");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rsc/quit.png"))); // NOI18N
         jButton1.setMnemonic('S');
@@ -85,7 +86,7 @@ public class Ventana2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JOptionPane.showMessageDialog(this, "Esto es un mensaje de prueba", "PRUEBA", JOptionPane.OK_OPTION);
+        JOptionPane.showMessageDialog(this, "Esto es un mensaje de prueba", "PRUEBA", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 	/**
