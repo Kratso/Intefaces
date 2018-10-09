@@ -44,6 +44,7 @@ public class SegundaVentana extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Demo de Ventanas 2");
 
+        jButton1.setMnemonic('M');
         jButton1.setText("Mensaje");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +52,7 @@ public class SegundaVentana extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setMnemonic('C');
         jButton2.setText("Cerrar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

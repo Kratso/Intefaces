@@ -42,6 +42,7 @@ public class VentanaConPestañas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Demo de Ventanas 2");
 
+        jButton1.setMnemonic('N');
         jButton1.setText("Nueva Ventana");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +50,7 @@ public class VentanaConPestañas extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setMnemonic('S');
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +81,7 @@ public class VentanaConPestañas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pestaña 1", jPanel1);
 
+        jButton3.setMnemonic('M');
         jButton3.setText("Mensaje");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +108,7 @@ public class VentanaConPestañas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pestaña 2", jPanel2);
 
+        jButton4.setMnemonic('S');
         jButton4.setText("Salir");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +116,7 @@ public class VentanaConPestañas extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setMnemonic('N');
         jButton5.setText("Nueva Ventana");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,8 +159,8 @@ public class VentanaConPestañas extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
@@ -209,6 +214,12 @@ public class VentanaConPestañas extends javax.swing.JFrame {
 			java.util.logging.Logger.getLogger(VentanaConPestañas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(VentanaConPestañas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		}
+		
+		try {
+			javax.swing.UIManager.setLookAndFeel("com.bulenkov.darcula.DarculaLaf");
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
         //</editor-fold>
 		//</editor-fold>
