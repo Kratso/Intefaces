@@ -13,15 +13,7 @@
         <URL value="@terminalimpostorfxml.css" />
     </stylesheets>
    <children>
-      <ScrollPane opacity="0.0" prefViewportHeight="370.0" prefViewportWidth="600.0" stylesheets="@terminalimpostorfxml.css" visible="false">
-         <content>
-            <TextArea fx:id="_text_area" editable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="370.0" prefWidth="631.0" style="-fx-background-color: #000000;" styleClass="mainFxmlClass" wrapText="true">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </TextArea>
-         </content>
-      </ScrollPane>
-      <TextField id="_command_prompt" fx:id="command_prompt" layoutY="374.0" onKeyPressed="#executeLine" prefHeight="25.0" prefWidth="603.0" promptText="#" style="-fx-background-color: #000000;" stylesheets="@terminalimpostorfxml.css" />
+      <TextField id="command_prompt" fx:id="command_prompt" layoutY="374.0" onKeyPressed="#executeLine" prefHeight="25.0" prefWidth="603.0" promptText="#" style="-fx-background-color: #000000;" stylesheets="@terminalimpostorfxml.css" />
+      <TextArea id="text_area" editable="false" prefHeight="375.0" prefWidth="603.0" style="-fx-background-color: #000000;" styleClass="mainFxmlClass" stylesheets="@terminalimpostorfxml.css" wrapText="true" />
    </children>
 </AnchorPane>

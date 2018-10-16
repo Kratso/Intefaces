@@ -31,10 +31,10 @@ import javafx.scene.input.KeyEvent;
 public class TerminalImpostorFXMLController implements Initializable {
     
     @FXML
-    private TextField _command_prompt;
+    private TextField command_prompt;
 
     @FXML
-    private TextArea _text_area;
+    private TextArea text_area;
 
     private static Set<String> commandSet = new TreeSet();
     private static int currentCommand;
@@ -55,29 +55,29 @@ public class TerminalImpostorFXMLController implements Initializable {
                     currentCommand = commandSet.size();
                 }
                 if (currentCommand > 0) {
-                    _command_prompt.setText((String) commandSet.toArray()[currentCommand - 1]);
+                    command_prompt.setText((String) commandSet.toArray()[currentCommand - 1]);
                 }
             } else if (event.getCode().equals(KeyCode.DOWN)) {
                 currentCommand++;
                 if (currentCommand < commandSet.size()) {
-                    _command_prompt.setText((String) commandSet.toArray()[currentCommand - 1]);
+                    command_prompt.setText((String) commandSet.toArray()[currentCommand - 1]);
                 } else {
-                    _command_prompt.setText("");
+                    command_prompt.setText("");
                     currentCommand = 0;
                 }
             }
         } else {
             if (event.getCode().equals(KeyCode.ENTER)) {
-                String command = _command_prompt.getText();
+                String command = command_prompt.getText();
                 commandSet.add(command);
                 parseCommand(command);
                 currentCommand = 0;
-                _command_prompt.setText("");
+                command_prompt.setText("");
                 String area = "";
                 for(String s : commandSet){
                     area += s + "\n";
                 }
-                _text_area.setText(area);
+                text_area.setText(area);
             }
         }
     }
