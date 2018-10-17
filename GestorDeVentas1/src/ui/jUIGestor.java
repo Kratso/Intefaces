@@ -7,6 +7,7 @@ package ui;
 
 import controller.Venta;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ public class jUIGestor extends javax.swing.JFrame {
 	private Venta ventaBase = new Venta(0, 2, 1, 0, 1, true, true, false, false);
 	private Vector<String> clientes = new Vector<>();
 	private Vector<Venta> ventas = new Vector<>();
+	private ArrayList<Venta> busqueda = new ArrayList<>();
+	private int index;
 
 	public jUIGestor() {
 		initComponents();
@@ -81,6 +84,7 @@ public class jUIGestor extends javax.swing.JFrame {
         botonAnterior = new javax.swing.JButton();
         botonSiguiente = new javax.swing.JButton();
         botonUltimo = new javax.swing.JButton();
+        navegacionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +123,7 @@ public class jUIGestor extends javax.swing.JFrame {
         proc2.setEnabled(false);
 
         processorGroup.add(proc3);
+        proc3.setSelected(true);
         proc3.setText("i5 7550K");
         proc3.setActionCommand("2");
         proc3.setEnabled(false);
@@ -136,6 +141,7 @@ public class jUIGestor extends javax.swing.JFrame {
         ram1.setEnabled(false);
 
         ramGroup.add(ram2);
+        ram2.setSelected(true);
         ram2.setText("8GB");
         ram2.setActionCommand("1");
         ram2.setEnabled(false);
@@ -153,6 +159,7 @@ public class jUIGestor extends javax.swing.JFrame {
         monitorLabel.setText("Monitor");
 
         monitorGroup.add(monitor1);
+        monitor1.setSelected(true);
         monitor1.setText("27\" FHD");
         monitor1.setActionCommand("0");
         monitor1.setEnabled(false);
@@ -180,6 +187,7 @@ public class jUIGestor extends javax.swing.JFrame {
         storage1.setEnabled(false);
 
         storageGroup.add(storage2);
+        storage2.setSelected(true);
         storage2.setText("512GB SSD S3");
         storage2.setActionCommand("1");
         storage2.setEnabled(false);
@@ -196,9 +204,11 @@ public class jUIGestor extends javax.swing.JFrame {
 
         otrosLabel.setText("Otros");
 
+        otros1.setSelected(true);
         otros1.setText("Adaptador Wi-Fi");
         otros1.setEnabled(false);
 
+        otros2.setSelected(true);
         otros2.setText("Grabador DVD");
         otros2.setEnabled(false);
 
@@ -220,6 +230,11 @@ public class jUIGestor extends javax.swing.JFrame {
         botonBuscar.setMnemonic('B');
         botonBuscar.setText("Buscar");
         botonBuscar.setEnabled(false);
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
 
         botonEliminar.setMnemonic('E');
         botonEliminar.setText("Eliminar");
@@ -257,6 +272,8 @@ public class jUIGestor extends javax.swing.JFrame {
 
         botonUltimo.setText(">>");
         botonUltimo.setEnabled(false);
+
+        navegacionLabel.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -350,14 +367,19 @@ public class jUIGestor extends javax.swing.JFrame {
                         .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(botonPrimero)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonAnterior)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonSiguiente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonUltimo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(botonPrimero)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonAnterior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonSiguiente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonUltimo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(navegacionLabel)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -436,9 +458,10 @@ public class jUIGestor extends javax.swing.JFrame {
                             .addComponent(monitor4))))
                 .addGap(14, 14, 14)
                 .addComponent(botonCancelar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonAniadir)
                             .addComponent(botonBuscar)
@@ -449,11 +472,12 @@ public class jUIGestor extends javax.swing.JFrame {
                             .addComponent(botonAnterior)
                             .addComponent(botonSiguiente)
                             .addComponent(botonUltimo))
-                        .addContainerGap(22, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(navegacionLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonSalir)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -484,10 +508,7 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAniadirActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        toggleControls(false);
-		nombreField.grabFocus();
-		nombreField.selectAll();
-		setVenta(ventaBase, true);
+        restoreUI();
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -513,7 +534,37 @@ public class jUIGestor extends javax.swing.JFrame {
 		listaClientes.setListData(clientes);
 		nombreField.grabFocus();
 		nombreField.setText(null);
+		
     }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+   		toggleControls(false);
+		busqueda.clear();
+		index = 0;
+		for(int i = 0; i < clientes.size(); i++){
+			if (clientes.get(i).equals(nombreField.getText())) {
+				busqueda.add(ventas.get(i));
+			}
+		}
+		if(busqueda.size() == 0){
+			JOptionPane.showConfirmDialog(this,
+					"No se ha encontrado ninguna coincidencia",
+					"Error en Búsqueda",
+					JOptionPane.INFORMATION_MESSAGE);
+		} else if (busqueda.size() == 1){
+			toggleNavegacion(true, false);
+			setVenta(busqueda.get(0), true);
+		} else if (busqueda.size() == 2) {
+			toggleNavegacion(true, true);
+			botonPrimero.setEnabled(false);
+			botonUltimo.setEnabled(false);
+			setVenta(busqueda.get(index), true);
+		} else {
+			toggleNavegacion(true, true);
+			botonPrimero.setEnabled(false);
+		}
+		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
+    }//GEN-LAST:event_botonBuscarActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -556,8 +607,17 @@ public class jUIGestor extends javax.swing.JFrame {
 				botonAnterior.setVisible(false);
 				botonSiguiente.setVisible(false);
 				botonUltimo.setVisible(false);
+				
 			}
 		});
+	}
+	
+	private void restoreUI(){
+		toggleControls(false);
+		toggleNavegacion(false, false);
+		nombreField.grabFocus();
+		nombreField.selectAll();
+		setVenta(ventaBase, true);
 	}
 	
 	private void toggleControls(boolean toggle){
@@ -585,6 +645,18 @@ public class jUIGestor extends javax.swing.JFrame {
 		botonAniadir.setEnabled(toggle);
 		botonBuscar.setEnabled(toggle);
 			
+	}
+	
+	private void toggleNavegacion(boolean toggleV, boolean toggleE){
+		botonPrimero.setVisible(toggleV);
+		botonPrimero.setEnabled(toggleE);
+		botonAnterior.setVisible(toggleV);
+		botonAnterior.setEnabled(toggleE);
+		botonSiguiente.setVisible(toggleV);
+		botonSiguiente.setEnabled(toggleE);
+		botonUltimo.setVisible(toggleV);
+		botonUltimo.setEnabled(toggleE);
+		navegacionLabel.setVisible(toggleV);
 	}
 
 	private void setVenta(Venta venta, boolean localizacion) {
@@ -676,6 +748,7 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.JRadioButton monitor4;
     private javax.swing.ButtonGroup monitorGroup;
     private javax.swing.JLabel monitorLabel;
+    private javax.swing.JLabel navegacionLabel;
     private javax.swing.JTextField nombreField;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JCheckBox otros1;
