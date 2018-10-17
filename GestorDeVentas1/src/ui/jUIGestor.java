@@ -263,15 +263,35 @@ public class jUIGestor extends javax.swing.JFrame {
 
         botonPrimero.setText("<<");
         botonPrimero.setEnabled(false);
+        botonPrimero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPrimeroActionPerformed(evt);
+            }
+        });
 
         botonAnterior.setText("<");
         botonAnterior.setEnabled(false);
+        botonAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAnteriorActionPerformed(evt);
+            }
+        });
 
         botonSiguiente.setText(">");
         botonSiguiente.setEnabled(false);
+        botonSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSiguienteActionPerformed(evt);
+            }
+        });
 
         botonUltimo.setText(">>");
         botonUltimo.setEnabled(false);
+        botonUltimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonUltimoActionPerformed(evt);
+            }
+        });
 
         navegacionLabel.setText("jLabel1");
 
@@ -402,66 +422,67 @@ public class jUIGestor extends javax.swing.JFrame {
                             .addComponent(listaLabel)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(otrosLabel)
+                                .addGap(146, 146, 146))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(otros1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(otros2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(otros3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(otros4)
+                                .addGap(16, 16, 16))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(storageLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(storage1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(storage2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(90, 90, 90)
+                                .addComponent(storage2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(storage3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(storage4))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(27, 27, 27)
-                                    .addComponent(otros1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(otros2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(otros3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(otros4))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(otrosLabel)
-                                    .addGap(132, 132, 132)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ramLabel)
-                            .addComponent(procLabel)
-                            .addComponent(monitorLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(proc1)
-                            .addComponent(ram1)
-                            .addComponent(monitor1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(ram2)
-                                .addComponent(monitor2))
-                            .addComponent(proc2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(proc3)
-                            .addComponent(ram3)
-                            .addComponent(monitor3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(proc4)
-                            .addComponent(ram4)
-                            .addComponent(monitor4))))
-                .addGap(14, 14, 14)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(ramLabel)
+                                    .addComponent(procLabel)
+                                    .addComponent(monitorLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(proc1)
+                                    .addComponent(ram1)
+                                    .addComponent(monitor1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ram2)
+                                        .addComponent(monitor2))
+                                    .addComponent(proc2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(proc3)
+                                    .addComponent(ram3)
+                                    .addComponent(monitor3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(proc4)
+                                    .addComponent(ram4)
+                                    .addComponent(monitor4))))
+                        .addGap(14, 14, 14)))
                 .addComponent(botonCancelar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 8, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonAniadir)
                             .addComponent(botonBuscar)
@@ -472,7 +493,7 @@ public class jUIGestor extends javax.swing.JFrame {
                             .addComponent(botonAnterior)
                             .addComponent(botonSiguiente)
                             .addComponent(botonUltimo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                         .addComponent(navegacionLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(botonSalir)
@@ -484,7 +505,7 @@ public class jUIGestor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreFieldKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER && nombreField.getText().length() > 0){
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER && nombreField.getText().length() > 0) {
 			setVenta(ventaBase, false);
 			localidad.grabFocus();
 			toggleControls(true);
@@ -492,7 +513,7 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreFieldKeyPressed
 
     private void botonAniadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAniadirActionPerformed
-        toggleControls(false);
+		toggleControls(false);
 		clientes.add(nombreField.getText());
 		ventas.add(new Venta(localidad.getSelectedIndex(), //Genera Nueva Venta a partir de la Interfaz
 				Integer.parseInt(processorGroup.getSelection().getActionCommand()),
@@ -508,50 +529,50 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAniadirActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        restoreUI();
+		restoreUI();
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        System.exit(0);
+		System.exit(0);
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void listaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaClientesMouseClicked
-        nombreField.setText(clientes.get(listaClientes.getSelectedIndex()));
+		nombreField.setText(clientes.get(listaClientes.getSelectedIndex()));
 		setVenta(ventas.get(listaClientes.getSelectedIndex()), true);
 		botonEliminar.setEnabled(true);
     }//GEN-LAST:event_listaClientesMouseClicked
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
-        int opcion;
+		int opcion;
 		opcion = JOptionPane.showConfirmDialog(this,
 				"Esta operación es destructiva y no podrá recuperar los datos. ¿Desea continuar?",
 				"Eliminar Seleción",
 				JOptionPane.YES_NO_OPTION);
-		if(opcion == JOptionPane.OK_OPTION){
+		if (opcion == JOptionPane.OK_OPTION) {
 			clientes.remove(listaClientes.getSelectedIndex());
 			ventas.remove(listaClientes.getSelectedIndex());
 		}
 		listaClientes.setListData(clientes);
 		nombreField.grabFocus();
 		nombreField.setText(null);
-		
+
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-   		toggleControls(false);
+		toggleControls(false);
 		busqueda.clear();
 		index = 0;
-		for(int i = 0; i < clientes.size(); i++){
+		for (int i = 0; i < clientes.size(); i++) {
 			if (clientes.get(i).equals(nombreField.getText())) {
 				busqueda.add(ventas.get(i));
 			}
 		}
-		if(busqueda.size() == 0){
+		if (busqueda.size() == 0) {
 			JOptionPane.showConfirmDialog(this,
 					"No se ha encontrado ninguna coincidencia",
 					"Error en Búsqueda",
 					JOptionPane.INFORMATION_MESSAGE);
-		} else if (busqueda.size() == 1){
+		} else if (busqueda.size() == 1) {
 			toggleNavegacion(true, false);
 			setVenta(busqueda.get(0), true);
 		} else if (busqueda.size() == 2) {
@@ -565,6 +586,50 @@ public class jUIGestor extends javax.swing.JFrame {
 		}
 		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
     }//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void botonPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPrimeroActionPerformed
+		index = 0;
+		setVenta(busqueda.get(index), true);
+		toggleNavegacion(true, true);
+		botonPrimero.setEnabled(false);
+		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
+    }//GEN-LAST:event_botonPrimeroActionPerformed
+
+    private void botonUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonUltimoActionPerformed
+		index = busqueda.size() - 1;
+		setVenta(busqueda.get(index), true);
+		toggleNavegacion(true, true);
+		botonUltimo.setEnabled(false);
+		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
+    }//GEN-LAST:event_botonUltimoActionPerformed
+
+    private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
+		index--;
+		setVenta(busqueda.get(index), true);
+		if (index == 0) {
+			botonAnterior.setEnabled(false);
+			botonPrimero.setEnabled(false);
+		}
+		botonSiguiente.setEnabled(true);
+		if (busqueda.size() > 2) {
+			botonUltimo.setEnabled(true);
+		}
+		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
+    }//GEN-LAST:event_botonAnteriorActionPerformed
+
+    private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
+		index++;
+		setVenta(busqueda.get(index), true);
+		if (index == busqueda.size() - 1) {
+			botonSiguiente.setEnabled(false);
+			botonUltimo.setEnabled(false);
+		}
+		botonAnterior.setEnabled(true);
+		if (busqueda.size() > 2) {
+			botonPrimero.setEnabled(true);
+		}
+		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
+    }//GEN-LAST:event_botonSiguienteActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -607,20 +672,20 @@ public class jUIGestor extends javax.swing.JFrame {
 				botonAnterior.setVisible(false);
 				botonSiguiente.setVisible(false);
 				botonUltimo.setVisible(false);
-				
+
 			}
 		});
 	}
-	
-	private void restoreUI(){
+
+	private void restoreUI() {
 		toggleControls(false);
 		toggleNavegacion(false, false);
 		nombreField.grabFocus();
 		nombreField.selectAll();
 		setVenta(ventaBase, true);
 	}
-	
-	private void toggleControls(boolean toggle){
+
+	private void toggleControls(boolean toggle) {
 		localidad.setEnabled(toggle);
 		proc1.setEnabled(toggle);
 		proc2.setEnabled(toggle);
@@ -644,10 +709,10 @@ public class jUIGestor extends javax.swing.JFrame {
 		otros4.setEnabled(toggle);
 		botonAniadir.setEnabled(toggle);
 		botonBuscar.setEnabled(toggle);
-			
+
 	}
-	
-	private void toggleNavegacion(boolean toggleV, boolean toggleE){
+
+	private void toggleNavegacion(boolean toggleV, boolean toggleE) {
 		botonPrimero.setVisible(toggleV);
 		botonPrimero.setEnabled(toggleE);
 		botonAnterior.setVisible(toggleV);
@@ -719,7 +784,7 @@ public class jUIGestor extends javax.swing.JFrame {
 			case 3:
 				storage4.setSelected(true);
 		}
-		
+
 		otros1.setSelected(venta.isOtro1());
 		otros2.setSelected(venta.isOtro2());
 		otros3.setSelected(venta.isOtro3());
