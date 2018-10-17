@@ -1,0 +1,198 @@
+jpx_1507284696922_5150_callback({"ads":
+ {
+  "version": 1,
+  "count": 7,
+  "pixels":"http://us-u.openx.net/w/1.0/pd?plm=10&ph=26e53f82-d199-49df-9eca-7b350c0f9646",
+  "oxt": 261.013,
+  "ad": [
+        {
+         "adunitid":538529987,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_yM9SOfpKEELiaPRyVJKxFu_kIf' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MGQ5MmViZmItZjhkNC00OTVmLThlMGUtZjQ1ZDE0NDYxZDgzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg1Mjk5ODd8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9Y1FGY1U2QVljVg'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9MGQ5MmViZmItZjhkNC00OTVmLThlMGUtZjQ1ZDE0NDYxZDgzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg1Mjk5ODd8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9Y1FGY1U2QVljVg",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"1920",
+             "height":"1200",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MGQ5MmViZmItZjhkNC00OTVmLThlMGUtZjQ1ZDE0NDYxZDgzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg1Mjk5ODd8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9Y1FGY1U2QVljVg",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9MGQ5MmViZmItZjhkNC00OTVmLThlMGUtZjQ1ZDE0NDYxZDgzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg1Mjk5ODd8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9Y1FGY1U2QVljVg",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9MGQ5MmViZmItZjhkNC00OTVmLThlMGUtZjQ1ZDE0NDYxZDgzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg1Mjk5ODd8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9Y1FGY1U2QVljVg"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":538660592,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_iInECvUxDU7bnVCijfEk8dBG3m' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9ODhlODUzN2EtNGY4NS00ZWRmLWJlOGYtYjk2MTI1OTAzYjNjfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9ZnNlREZqWUhjQw'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9ODhlODUzN2EtNGY4NS00ZWRmLWJlOGYtYjk2MTI1OTAzYjNjfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9ZnNlREZqWUhjQw",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"970",
+             "height":"250",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9ODhlODUzN2EtNGY4NS00ZWRmLWJlOGYtYjk2MTI1OTAzYjNjfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9ZnNlREZqWUhjQw",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9ODhlODUzN2EtNGY4NS00ZWRmLWJlOGYtYjk2MTI1OTAzYjNjfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9ZnNlREZqWUhjQw",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9ODhlODUzN2EtNGY4NS00ZWRmLWJlOGYtYjk2MTI1OTAzYjNjfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9ZnNlREZqWUhjQw"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":538660593,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_pLpplhbNKQCS2fggcV28U-kMSt' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9NDAyNTI4ODAtYTliNC00MjIyLTk4YzYtOGExOTdmZTMxN2E2fHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9S28zQXVNV0FsRA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9NDAyNTI4ODAtYTliNC00MjIyLTk4YzYtOGExOTdmZTMxN2E2fHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9S28zQXVNV0FsRA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"970",
+             "height":"250",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9NDAyNTI4ODAtYTliNC00MjIyLTk4YzYtOGExOTdmZTMxN2E2fHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9S28zQXVNV0FsRA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9NDAyNTI4ODAtYTliNC00MjIyLTk4YzYtOGExOTdmZTMxN2E2fHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9S28zQXVNV0FsRA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9NDAyNTI4ODAtYTliNC00MjIyLTk4YzYtOGExOTdmZTMxN2E2fHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTF8dXI9S28zQXVNV0FsRA"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":538660594,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_gT9P-4x6j6CjNhIsgjnHLT_6MT' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MjVlMGU3ZWItYjA4Yi00ODRkLTg0MWUtZjYzYzkxYzBjNGYzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9RkZvWHZDWG5zWQ'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9MjVlMGU3ZWItYjA4Yi00ODRkLTg0MWUtZjYzYzkxYzBjNGYzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9RkZvWHZDWG5zWQ",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"728",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MjVlMGU3ZWItYjA4Yi00ODRkLTg0MWUtZjYzYzkxYzBjNGYzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9RkZvWHZDWG5zWQ",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9MjVlMGU3ZWItYjA4Yi00ODRkLTg0MWUtZjYzYzkxYzBjNGYzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9RkZvWHZDWG5zWQ",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9MjVlMGU3ZWItYjA4Yi00ODRkLTg0MWUtZjYzYzkxYzBjNGYzfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA1OTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9RkZvWHZDWG5zWQ"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":538660614,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_9Ch5uoY6ZOpp5k92IV7_7_BMkt' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MThjOGI1NmUtMDg5ZS00OGIwLWFiZGEtYTUxOTliNTk0YjgwfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA2MTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9VDRRdHlqY3FCdw'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9MThjOGI1NmUtMDg5ZS00OGIwLWFiZGEtYTUxOTliNTk0YjgwfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA2MTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9VDRRdHlqY3FCdw",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"300",
+             "height":"250",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9MThjOGI1NmUtMDg5ZS00OGIwLWFiZGEtYTUxOTliNTk0YjgwfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA2MTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9VDRRdHlqY3FCdw",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9MThjOGI1NmUtMDg5ZS00OGIwLWFiZGEtYTUxOTliNTk0YjgwfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA2MTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9VDRRdHlqY3FCdw",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9MThjOGI1NmUtMDg5ZS00OGIwLWFiZGEtYTUxOTliNTk0YjgwfHJ0PTE1MDcyODUxMDV8YXVpZD01Mzg2NjA2MTR8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9VDRRdHlqY3FCdw"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":539281822,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_kdGRAlfKnoxZCWv5MCjBPmotzx' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9YzRjYzA3ZDMtOTA4ZS00NjUwLTkzZjItMTYyMjQ4NzE3OTQwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9c2dRVzdrNUxKTg'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9YzRjYzA3ZDMtOTA4ZS00NjUwLTkzZjItMTYyMjQ4NzE3OTQwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9c2dRVzdrNUxKTg",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"728",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9YzRjYzA3ZDMtOTA4ZS00NjUwLTkzZjItMTYyMjQ4NzE3OTQwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9c2dRVzdrNUxKTg",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9YzRjYzA3ZDMtOTA4ZS00NjUwLTkzZjItMTYyMjQ4NzE3OTQwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9c2dRVzdrNUxKTg",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9YzRjYzA3ZDMtOTA4ZS00NjUwLTkzZjItMTYyMjQ4NzE3OTQwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjJ8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9c2dRVzdrNUxKTg"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":539281823,
+         "adid":0,
+         "type":"html",
+         "html":"<div id='beacon_KrtNjz5tlUchQpjEgD5e_omyWo' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9ZjVkZDY2ZmItMmEwZS00ZjhiLTg4ODUtZGI3MjY0Y2M2ZjcwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9OWtlNGs5NGpMUA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"1fHU9MXxyaWQ9ZjVkZDY2ZmItMmEwZS00ZjhiLTg4ODUtZGI3MjY0Y2M2ZjcwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9OWtlNGs5NGpMUA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "adv_id":":",
+         "brand_id":"",
+         "creative":[
+           {
+             "width":"120",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-europe-west-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=1fHU9MXxyaWQ9ZjVkZDY2ZmItMmEwZS00ZjhiLTg4ODUtZGI3MjY0Y2M2ZjcwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9OWtlNGs5NGpMUA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=1fHU9MXxyaWQ9ZjVkZDY2ZmItMmEwZS00ZjhiLTg4ODUtZGI3MjY0Y2M2ZjcwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9OWtlNGs5NGpMUA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=1fHU9MXxyaWQ9ZjVkZDY2ZmItMmEwZS00ZjhiLTg4ODUtZGI3MjY0Y2M2ZjcwfHJ0PTE1MDcyODUxMDV8YXVpZD01MzkyODE4MjN8YXVtPURNSUQuV0VCfGF1cGY9ZGlzcGxheXxzaWQ9NTM3MjcyMzAxfHB1Yj01MzcxMTc0OTd8cGM9VVNEfHJhaWQ9ODFhN2E4NmQtNjgzNS00NTcwLWE0YzAtNzE1M2RlMGRmMGJkfHJzPTF8bXdmPTB8dXI9OWtlNGs5NGpMUA"
+             }
+           }
+         ]
+        }]
+ }
+});
