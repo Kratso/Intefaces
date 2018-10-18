@@ -86,10 +86,11 @@ public class jUIGestor extends javax.swing.JFrame {
         botonUltimo = new javax.swing.JButton();
         navegacionLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         nombreLabel.setText("Nombre");
 
+        nombreField.setNextFocusableComponent(listaClientes);
         nombreField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nombreFieldKeyPressed(evt);
@@ -505,7 +506,7 @@ public class jUIGestor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nombreFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreFieldKeyPressed
-		if (evt.getKeyCode() == KeyEvent.VK_ENTER && nombreField.getText().length() > 0) {
+		if (evt.getKeyCode() == KeyEvent.VK_ENTER && valido(nombreField.getText())) {
 			setVenta(ventaBase, false);
 			localidad.grabFocus();
 			toggleControls(true);
@@ -672,7 +673,7 @@ public class jUIGestor extends javax.swing.JFrame {
 				botonAnterior.setVisible(false);
 				botonSiguiente.setVisible(false);
 				botonUltimo.setVisible(false);
-
+				navegacionLabel.setVisible(false);
 			}
 		});
 	}
@@ -791,6 +792,9 @@ public class jUIGestor extends javax.swing.JFrame {
 		otros4.setSelected(venta.isOtro4());
 	}
 
+	private boolean valido(String text) {
+		return text.matches("([a-zA-Z.\\-]+[ ]?)+");
+	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAniadir;
@@ -813,7 +817,7 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.JRadioButton monitor4;
     private javax.swing.ButtonGroup monitorGroup;
     private javax.swing.JLabel monitorLabel;
-    private javax.swing.JLabel navegacionLabel;
+    private static javax.swing.JLabel navegacionLabel;
     private javax.swing.JTextField nombreField;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JCheckBox otros1;
@@ -840,4 +844,5 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.ButtonGroup storageGroup;
     private javax.swing.JLabel storageLabel;
     // End of variables declaration//GEN-END:variables
+
 }
