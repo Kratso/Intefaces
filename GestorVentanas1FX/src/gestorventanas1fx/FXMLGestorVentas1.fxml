@@ -6,14 +6,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="475.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
    <children>
       <Label layoutX="35.0" layoutY="36.0" text="Nombre" />
-      <TextField layoutX="95.0" layoutY="31.0" />
+      <TextField fx:id="nombreField" layoutX="95.0" layoutY="31.0" />
       <Label layoutX="354.0" layoutY="28.0" text="Lista de Clientes" />
-      <ListView layoutX="474.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listaClientes" layoutX="474.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="25.0" layoutY="79.0" text="Localidad" />
-      <ComboBox layoutX="95.0" layoutY="74.0" prefWidth="150.0" />
-      <Label layoutX="39.0" layoutY="230.0" text="Label" />
+      <ComboBox fx:id="localidad" layoutX="95.0" layoutY="74.0" prefHeight="26.0" prefWidth="171.0" visibleRowCount="5" />
+      <Label layoutX="336.0" layoutY="230.0" text="Monitor" />
+      <Label layoutX="474.0" layoutY="230.0" text="Almacenamiento" />
+      <Label layoutX="694.0" layoutY="230.0" text="Otros" />
+      <Label layoutX="51.0" layoutY="230.0" text="Procesador" />
+      <RadioButton fx:id="proc1" layoutX="36.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+         <toggleGroup>
+            <ToggleGroup fx:id="procGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="proc2" layoutX="36.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
+      <RadioButton fx:id="proc3" layoutX="36.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
+      <RadioButton fx:id="proc4" layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
+      <Label layoutX="203.0" layoutY="230.0" text="Memoria" />
+      <RadioButton layoutX="179.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton" />
    </children>
 </AnchorPane>
