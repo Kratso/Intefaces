@@ -14,19 +14,33 @@
       <ListView fx:id="listaClientes" layoutX="474.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="25.0" layoutY="79.0" text="Localidad" />
       <ComboBox fx:id="localidad" layoutX="95.0" layoutY="74.0" prefHeight="26.0" prefWidth="171.0" visibleRowCount="5" />
-      <Label layoutX="336.0" layoutY="230.0" text="Monitor" />
       <Label layoutX="474.0" layoutY="230.0" text="Almacenamiento" />
       <Label layoutX="694.0" layoutY="230.0" text="Otros" />
       <Label layoutX="51.0" layoutY="230.0" text="Procesador" />
-      <RadioButton fx:id="proc1" layoutX="36.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+      <RadioButton fx:id="proc1" layoutX="36.0" layoutY="275.0" mnemonicParsing="false" text="i3 7300H">
          <toggleGroup>
             <ToggleGroup fx:id="procGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="proc2" layoutX="36.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
-      <RadioButton fx:id="proc3" layoutX="36.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
+      <RadioButton fx:id="proc2" layoutX="36.0" layoutY="303.0" mnemonicParsing="false" text="i5 7550H" toggleGroup="$procGroup" />
+      <RadioButton fx:id="proc3" layoutX="36.0" layoutY="330.0" mnemonicParsing="false" text="i5 7500K" toggleGroup="$procGroup" />
       <RadioButton fx:id="proc4" layoutX="36.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$procGroup" />
       <Label layoutX="203.0" layoutY="230.0" text="Memoria" />
-      <RadioButton layoutX="179.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton" />
+      <RadioButton fx:id="ram1" layoutX="179.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+         <toggleGroup>
+            <ToggleGroup fx:id="ramGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="ram2" layoutX="179.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$ramGroup" />
+      <RadioButton fx:id="ram3" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$ramGroup" />
+      <RadioButton fx:id="ram4" layoutX="179.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$ramGroup" />
+      <RadioButton fx:id="monitor1" layoutX="309.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+         <toggleGroup>
+            <ToggleGroup fx:id="monitorGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <Label layoutX="336.0" layoutY="230.0" text="Monitor" />
+      <RadioButton fx:id="monitor2" layoutX="309.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
+      <RadioButton fx:id="monitor3" layoutX="309.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
+      <RadioButton fx:id="monitor4" layoutX="309.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
    </children>
 </AnchorPane>
