@@ -116,27 +116,28 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="otros3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otros1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otros2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="otros4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jScrollPane1" min="-2" pref="176" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="otros3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="otros1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="otros2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="otros4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                      <Component id="otrosLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="otrosLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -199,26 +200,15 @@
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="storageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="otrosLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="otros1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="otros2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="otros3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="otros4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="storageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="otrosLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="storage1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="storage2" min="-2" max="-2" attributes="0"/>
@@ -227,43 +217,52 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="storage4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="ramLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="procLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="monitorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="21" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="proc1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ram1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="monitor1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="otros1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                      <Component id="ram2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="monitor2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="proc2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="otros2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="otros3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="proc3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ram3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="monitor3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="proc4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ram4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="monitor4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="otros4" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ramLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="procLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="monitorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="proc1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ram1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="monitor1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="ram2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="monitor2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="proc2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="proc3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ram3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="monitor3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="proc4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ram4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="monitor4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -342,11 +341,12 @@
     <Component class="javax.swing.JComboBox" name="localidad">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
+          <StringArray count="5">
             <StringItem index="0" value="Villalba"/>
-            <StringItem index="1" value="Guadarrama"/>
-            <StringItem index="2" value="Galapagar"/>
-            <StringItem index="3" value="Moralzarzal"/>
+            <StringItem index="1" value="Alpedrete"/>
+            <StringItem index="2" value="Guadarrama"/>
+            <StringItem index="3" value="Galapagar"/>
+            <StringItem index="4" value="Moralzarzal"/>
           </StringArray>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
@@ -365,6 +365,9 @@
         <Property name="text" type="java.lang.String" value="i3 7300H"/>
         <Property name="actionCommand" type="java.lang.String" value="0"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="proc2"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="proc2">
@@ -375,6 +378,9 @@
         <Property name="text" type="java.lang.String" value="i5 7550H"/>
         <Property name="actionCommand" type="java.lang.String" value="1"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="proc3"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="proc3">
@@ -386,6 +392,9 @@
         <Property name="text" type="java.lang.String" value="i5 7550K"/>
         <Property name="actionCommand" type="java.lang.String" value="2"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="proc4"/>
+        </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
@@ -399,6 +408,9 @@
         <Property name="text" type="java.lang.String" value="i7 7700K"/>
         <Property name="actionCommand" type="java.lang.String" value="3"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="ram1"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="ramLabel">
@@ -414,6 +426,9 @@
         <Property name="text" type="java.lang.String" value="4GB"/>
         <Property name="actionCommand" type="java.lang.String" value="0"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="ram2"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="ram2">
@@ -425,6 +440,9 @@
         <Property name="text" type="java.lang.String" value="8GB"/>
         <Property name="actionCommand" type="java.lang.String" value="1"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="ram3"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="ram3">
@@ -435,6 +453,9 @@
         <Property name="text" type="java.lang.String" value="16GB"/>
         <Property name="actionCommand" type="java.lang.String" value="2"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="ram4"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="ram4">
@@ -445,6 +466,9 @@
         <Property name="text" type="java.lang.String" value="32GB"/>
         <Property name="actionCommand" type="java.lang.String" value="3"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="monitor1"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="monitorLabel">
@@ -461,6 +485,9 @@
         <Property name="text" type="java.lang.String" value="27&quot; FHD"/>
         <Property name="actionCommand" type="java.lang.String" value="0"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="monitor2"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="monitor2">
@@ -471,6 +498,9 @@
         <Property name="text" type="java.lang.String" value="27&quot; 2k"/>
         <Property name="actionCommand" type="java.lang.String" value="1"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="monitor3"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="monitor3">
@@ -481,6 +511,9 @@
         <Property name="text" type="java.lang.String" value="38&quot; UW 2k"/>
         <Property name="actionCommand" type="java.lang.String" value="2"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="monitor4"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="monitor4">
@@ -491,6 +524,9 @@
         <Property name="text" type="java.lang.String" value="24&quot; 4k Gsync"/>
         <Property name="actionCommand" type="java.lang.String" value="3"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="storage1"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="storageLabel">
@@ -506,6 +542,9 @@
         <Property name="text" type="java.lang.String" value="256GB SSD S3"/>
         <Property name="actionCommand" type="java.lang.String" value="0"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="storage2"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="storage2">
@@ -517,6 +556,9 @@
         <Property name="text" type="java.lang.String" value="512GB SSD S3"/>
         <Property name="actionCommand" type="java.lang.String" value="1"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="storage3"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="storage3">
@@ -527,6 +569,9 @@
         <Property name="text" type="java.lang.String" value="256GB SSD NVMe"/>
         <Property name="actionCommand" type="java.lang.String" value="2"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="storage4"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="storage4">
@@ -537,6 +582,9 @@
         <Property name="text" type="java.lang.String" value="1TB SSD S3"/>
         <Property name="actionCommand" type="java.lang.String" value="3"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="otros1"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="otrosLabel">
@@ -549,6 +597,9 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Adaptador Wi-Fi"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="otros2"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="otros2">
@@ -556,18 +607,27 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Grabador DVD"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="otros3"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="otros3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Soporte Thunderbolt"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="otros4"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="otros4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tarjeta BU/Restore"/>
         <Property name="enabled" type="boolean" value="false"/>
+        <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="botonAniadir"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botonAniadir">

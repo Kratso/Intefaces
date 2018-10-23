@@ -6,12 +6,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
+<AnchorPane id="AnchorPane" cacheShape="false" disable="true" prefHeight="534.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
    <children>
       <Label layoutX="35.0" layoutY="36.0" text="Nombre" />
-      <TextField fx:id="nombreField" layoutX="95.0" layoutY="31.0" />
+      <TextField fx:id="nombreField" layoutX="95.0" layoutY="31.0" onKeyPressed="#nombreFieldKeyPressed" />
       <Label layoutX="354.0" layoutY="28.0" text="Lista de Clientes" />
-      <ListView fx:id="listaClientes" layoutX="474.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listaClientes" layoutX="474.0" layoutY="14.0" onMouseClicked="#listaClientesOnMouseClicked" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="25.0" layoutY="79.0" text="Localidad" />
       <ComboBox fx:id="localidad" layoutX="95.0" layoutY="74.0" prefHeight="26.0" prefWidth="171.0" visibleRowCount="5" />
       <Label layoutX="41.0" layoutY="230.0" text="Procesador" />
@@ -31,31 +31,36 @@
       <RadioButton fx:id="ram2" layoutX="179.0" layoutY="303.0" mnemonicParsing="false" text="8GB" toggleGroup="$ramGroup" />
       <RadioButton fx:id="ram3" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" text="16GB" toggleGroup="$ramGroup" />
       <RadioButton fx:id="ram4" layoutX="179.0" layoutY="358.0" mnemonicParsing="false" text="32GB" toggleGroup="$ramGroup" />
-      <Label layoutX="336.0" layoutY="230.0" text="Monitor" />
-      <RadioButton fx:id="monitor1" layoutX="309.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+      <Label layoutX="336.0" layoutY="230.0" text="27&quot; 2K" />
+      <RadioButton fx:id="monitor1" layoutX="309.0" layoutY="275.0" mnemonicParsing="false" text="27&quot; FHD">
          <toggleGroup>
             <ToggleGroup fx:id="monitorGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="monitor2" layoutX="309.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
-      <RadioButton fx:id="monitor3" layoutX="309.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
-      <RadioButton fx:id="monitor4" layoutX="309.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$monitorGroup" />
+      <RadioButton fx:id="monitor2" layoutX="309.0" layoutY="303.0" mnemonicParsing="false" text="27&quot; 2K" toggleGroup="$monitorGroup" />
+      <RadioButton fx:id="monitor3" layoutX="309.0" layoutY="330.0" mnemonicParsing="false" text="38&quot; UW 2k" toggleGroup="$monitorGroup" />
+      <RadioButton fx:id="monitor4" layoutX="309.0" layoutY="358.0" mnemonicParsing="false" text="24&quot; 4K GSync" toggleGroup="$monitorGroup" />
       <Label layoutX="474.0" layoutY="230.0" text="Almacenamiento" />
-      <RadioButton fx:id="storage1" layoutX="474.0" layoutY="275.0" mnemonicParsing="false" text="RadioButton">
+      <RadioButton fx:id="storage1" layoutX="474.0" layoutY="275.0" mnemonicParsing="false" text="256GB SSD">
          <toggleGroup>
             <ToggleGroup fx:id="storageGroup" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="storage2" layoutX="474.0" layoutY="303.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$storageGroup" />
-      <RadioButton fx:id="storage3" layoutX="474.0" layoutY="330.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$storageGroup" />
-      <RadioButton fx:id="storage4" layoutX="474.0" layoutY="358.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$storageGroup" />
+      <RadioButton fx:id="storage2" layoutX="474.0" layoutY="303.0" mnemonicParsing="false" text="512GB SSD" toggleGroup="$storageGroup" />
+      <RadioButton fx:id="storage3" layoutX="474.0" layoutY="330.0" mnemonicParsing="false" text="256GB SSD NVMe" toggleGroup="$storageGroup" />
+      <RadioButton fx:id="storage4" layoutX="474.0" layoutY="358.0" mnemonicParsing="false" text="1TB SSD" toggleGroup="$storageGroup" />
       <Label layoutX="680.0" layoutY="230.0" text="Otros" />
-      <CheckBox fx:id="otros1" layoutX="654.0" layoutY="275.0" mnemonicParsing="false" text="CheckBox" />
-      <CheckBox fx:id="otros2" layoutX="654.0" layoutY="303.0" mnemonicParsing="false" text="CheckBox" />
-      <CheckBox fx:id="otros3" layoutX="654.0" layoutY="330.0" mnemonicParsing="false" text="CheckBox" />
-      <CheckBox fx:id="otros4" layoutX="654.0" layoutY="358.0" mnemonicParsing="false" text="CheckBox" />
+      <CheckBox fx:id="otros1" layoutX="654.0" layoutY="275.0" mnemonicParsing="false" text="Wi-Fi" />
+      <CheckBox fx:id="otros2" layoutX="654.0" layoutY="303.0" mnemonicParsing="false" text="Grabadora DVD" />
+      <CheckBox fx:id="otros3" layoutX="654.0" layoutY="330.0" mnemonicParsing="false" text="Soporte Thunderbolt" />
+      <CheckBox fx:id="otros4" layoutX="654.0" layoutY="358.0" mnemonicParsing="false" text="BU/Restore" />
       <Button fx:id="botonCancelar" layoutX="649.0" layoutY="402.0" onAction="#botonCancelarOnActionEvent" text="_Cancelar" />
       <Button fx:id="botonSalir" layoutX="649.0" layoutY="439.0" onAction="#botonSalirOnActionEvent" prefHeight="26.0" prefWidth="82.0" text="_Salir" />
       <Button fx:id="botonAniadir" layoutX="30.0" layoutY="415.0" onAction="#botonAñadirOnActionEvent" text="_Añadir" />
-      <Button layoutX="104.0" layoutY="415.0" mnemonicParsing="true" text="_Buscar" />
+      <Button fx:id="botonBuscar" layoutX="104.0" layoutY="415.0" mnemonicParsing="true" onAction="#botonBuscarOnActionEvent" text="_Buscar" />
+      <Button fx:id="botonEliminar" layoutX="187.0" layoutY="415.0" onAction="#botonEliminarOnActionEvent" text="_Eliminar" />
+      <Button fx:id="botonPrimero" layoutX="33.0" layoutY="452.0" mnemonicParsing="false" onAction="#botonPrimeroOnActionPerformed" text="&lt;&lt;" />
+      <Button fx:id="botonAnterior" layoutX="73.0" layoutY="452.0" mnemonicParsing="false" onAction="#botonAnteriorActionPerformed" text="&lt;" />
+      <Button fx:id="botonSiguiente" layoutX="102.0" layoutY="452.0" mnemonicParsing="false" onAction="#botonSiguienteOnActionPerformed" text="&gt;" />
+      <Button fx:id="botonUltimo" layoutX="131.0" layoutY="452.0" mnemonicParsing="false" onAction="#botonUltimoOnActionPerformed" text="&gt;&gt;" />
    </children>
 </AnchorPane>
