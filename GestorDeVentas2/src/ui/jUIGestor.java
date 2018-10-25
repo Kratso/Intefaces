@@ -74,6 +74,8 @@ public class jUIGestor extends javax.swing.JFrame {
         botonSiguiente = new javax.swing.JButton();
         botonUltimo = new javax.swing.JButton();
         navegacionLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -325,6 +327,10 @@ public class jUIGestor extends javax.swing.JFrame {
 
         navegacionLabel.setText("jLabel1");
 
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -412,8 +418,12 @@ public class jUIGestor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonEliminar)))
-                        .addGap(272, 272, 272)
+                                .addComponent(botonEliminar)
+                                .addGap(39, 39, 39)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2)))
+                        .addGap(118, 118, 118)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(botonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -512,7 +522,9 @@ public class jUIGestor extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonAniadir)
                             .addComponent(botonBuscar)
-                            .addComponent(botonEliminar))
+                            .addComponent(botonEliminar)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonPrimero)
@@ -829,6 +841,8 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.JButton botonSalir;
     private static javax.swing.JButton botonSiguiente;
     private static javax.swing.JButton botonUltimo;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listaClientes;
     private javax.swing.JLabel listaLabel;
