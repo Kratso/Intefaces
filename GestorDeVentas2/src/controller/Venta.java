@@ -5,11 +5,13 @@
  */
 package controller;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumno
  */
-public class Venta {
+public class Venta implements Serializable {
 	private int localizacion;
 	private int procesador;
 	private int ram;
