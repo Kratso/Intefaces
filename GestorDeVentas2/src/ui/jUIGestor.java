@@ -6,19 +6,37 @@
 package ui;
 
 import controller.Venta;
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 
 public class jUIGestor extends javax.swing.JFrame {
 
+	private final File archivo = new File("ventas.dat");
 	private final Venta ventaBase = new Venta(0, 2, 1, 0, 1, true, true, false, false);
 	private final Vector<String> clientes = new Vector<>();
 	private final Vector<Venta> ventas = new Vector<>();
 	private final ArrayList<Venta> busqueda = new ArrayList<>();
+	private final ArrayList<String> busquedaNombres = new ArrayList<>();
 	private int index;
+	private String BUSQUEDA_CAMPO = "campo";
+	private String BUSQUEDA_ARCHIVO = "archivo";
 
 	public jUIGestor() {
 		initComponents();
@@ -74,6 +92,8 @@ public class jUIGestor extends javax.swing.JFrame {
         botonSiguiente = new javax.swing.JButton();
         botonUltimo = new javax.swing.JButton();
         navegacionLabel = new javax.swing.JLabel();
+        botonMostrar = new javax.swing.JButton();
+        botonGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -325,6 +345,22 @@ public class jUIGestor extends javax.swing.JFrame {
 
         navegacionLabel.setText("jLabel1");
 
+        botonMostrar.setMnemonic('M');
+        botonMostrar.setText("Mostrar Ventas");
+        botonMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarActionPerformed(evt);
+            }
+        });
+
+        botonGuardar.setMnemonic('G');
+        botonGuardar.setText("Guardar Ventas");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGuardarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -412,8 +448,12 @@ public class jUIGestor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botonBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonEliminar)))
-                        .addGap(272, 272, 272)
+                                .addComponent(botonEliminar)
+                                .addGap(39, 39, 39)
+                                .addComponent(botonMostrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botonGuardar)))
+                        .addGap(118, 118, 118)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(botonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -512,7 +552,9 @@ public class jUIGestor extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonAniadir)
                             .addComponent(botonBuscar)
-                            .addComponent(botonEliminar))
+                            .addComponent(botonEliminar)
+                            .addComponent(botonMostrar)
+                            .addComponent(botonGuardar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonPrimero)
@@ -559,7 +601,20 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-		System.exit(0);
+		if (ventas.isEmpty()) {
+			System.exit(0);
+		} else {
+			int opcion = JOptionPane.showConfirmDialog(this,
+					"Tiene datos sin guardar, ¿desea guardarlos?",
+					"Datos sin guardar",
+					JOptionPane.INFORMATION_MESSAGE);
+			if (opcion == JOptionPane.OK_OPTION) {
+				guardarDatos();
+			} else if (opcion == JOptionPane.CANCEL_OPTION) {
+				return;
+			}
+			System.exit(0);
+		}
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void listaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaClientesMouseClicked
@@ -593,48 +648,78 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_botonEliminarActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+		busqueda(BUSQUEDA_CAMPO);
+    }//GEN-LAST:event_botonBuscarActionPerformed
+
+	private void busqueda(String opcion) throws HeadlessException {
 		toggleControls(false);
 		busqueda.clear();
+		busquedaNombres.clear();
 		index = 0;
 		botonEliminar.setEnabled(false);
-
-		for (int i = 0; i < clientes.size(); i++) {
-			if (clientes.get(i).equals(nombreField.getText())) {
-				busqueda.add(ventas.get(i));
+		if (opcion == BUSQUEDA_CAMPO) {
+			for (int i = 0; i < clientes.size(); i++) {
+				if (clientes.get(i).equals(nombreField.getText())) {
+					busqueda.add(ventas.get(i));
+					busquedaNombres.add(nombreField.getText());
+				}
 			}
+		} else if (opcion == BUSQUEDA_ARCHIVO) {
+			ObjectInputStream ois;
+			try {
+				ois = new ObjectInputStream(new FileInputStream(archivo));
+				busqueda.addAll((Vector<Venta>) ois.readObject());
+				busquedaNombres.addAll((Vector<String>) ois.readObject());
+
+			} catch (FileNotFoundException ex) {
+				JOptionPane.showMessageDialog(this, "No existe el fichero de ventas", "ERROR: No existe el fichero", JOptionPane.ERROR_MESSAGE);
+			} catch (IOException ex) {
+				Logger.getLogger(jUIGestor.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (ClassNotFoundException ex) {
+				Logger.getLogger(jUIGestor.class.getName()).log(Level.SEVERE, null, ex);
+			}
+
 		}
 
 		switch (busqueda.size()) {
 			case 0:
-				JOptionPane.showConfirmDialog(this,
-						"No se ha encontrado ninguna coincidencia",
-						"Error en Búsqueda",
-						JOptionPane.INFORMATION_MESSAGE);
+				if (opcion == BUSQUEDA_CAMPO) {
+					JOptionPane.showMessageDialog(this,
+							"No se ha encontrado ninguna coincidencia",
+							"Error en Búsqueda",
+							JOptionPane.ERROR_MESSAGE);
+				}
 				restoreUI();
 				break;
 			case 1:
 				toggleNavegacion(true, false);
 				setVenta(busqueda.get(0), true);
+				nombreField.setText(busquedaNombres.get(0));
+
 				break;
 			case 2:
 				toggleNavegacion(true, true);
 				botonPrimero.setEnabled(false);
 				botonAnterior.setEnabled(false);
 				botonUltimo.setEnabled(false);
-				setVenta(busqueda.get(index), true);
+				setVenta(busqueda.get(0), true);
+				nombreField.setText(busquedaNombres.get(0));
 				break;
 			default:
 				toggleNavegacion(true, true);
 				botonAnterior.setEnabled(false);
 				botonPrimero.setEnabled(false);
+				setVenta(busqueda.get(0), true);
+				nombreField.setText(busquedaNombres.get(0));
 		}
 		navegacionLabel.setText((index + 1) + "/" + busqueda.size());
 		botonSiguiente.grabFocus();
-    }//GEN-LAST:event_botonBuscarActionPerformed
+	}
 
     private void botonPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPrimeroActionPerformed
 		index = 0;
 		setVenta(busqueda.get(index), true);
+		nombreField.setText(busquedaNombres.get(index));
 		toggleNavegacion(true, true);
 		botonAnterior.setEnabled(false);
 		botonPrimero.setEnabled(false);
@@ -644,6 +729,7 @@ public class jUIGestor extends javax.swing.JFrame {
     private void botonUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonUltimoActionPerformed
 		index = busqueda.size() - 1;
 		setVenta(busqueda.get(index), true);
+		nombreField.setText(busquedaNombres.get(index));
 		toggleNavegacion(true, true);
 		botonSiguiente.setEnabled(false);
 		botonUltimo.setEnabled(false);
@@ -653,6 +739,7 @@ public class jUIGestor extends javax.swing.JFrame {
     private void botonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnteriorActionPerformed
 		index--;
 		setVenta(busqueda.get(index), true);
+		nombreField.setText(busquedaNombres.get(index));
 		if (index == 0) {
 			botonAnterior.setEnabled(false);
 			botonPrimero.setEnabled(false);
@@ -667,6 +754,7 @@ public class jUIGestor extends javax.swing.JFrame {
     private void botonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiguienteActionPerformed
 		index++;
 		setVenta(busqueda.get(index), true);
+		nombreField.setText(busquedaNombres.get(index));
 		if (index == busqueda.size() - 1) {
 			botonSiguiente.setEnabled(false);
 			botonUltimo.setEnabled(false);
@@ -690,9 +778,59 @@ public class jUIGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_listaClientesKeyReleased
 
     private void nombreFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreFieldKeyTyped
-		if (nombreField.getText().length() >= 15 ) // limit textfield to 3 characters
-            evt.consume(); 
+		if (nombreField.getText().length() >= 15) // limit textfield to 15 characters
+		{
+			evt.consume();
+		}
     }//GEN-LAST:event_nombreFieldKeyTyped
+
+	@SuppressWarnings("empty-statement")
+    private void botonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrarActionPerformed
+		busqueda(BUSQUEDA_ARCHIVO);
+    }//GEN-LAST:event_botonMostrarActionPerformed
+
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+		guardarDatos();
+    }//GEN-LAST:event_botonGuardarActionPerformed
+
+	private void guardarDatos() {
+		ObjectOutputStream oos = null;
+		ObjectInputStream ois = null;
+		if (!clientes.isEmpty()) {
+			try {
+				if (archivo.exists()) {
+					ois = new ObjectInputStream(new FileInputStream(archivo));
+					Vector temp = (Vector<Venta>) ois.readObject();
+					temp.addAll(ventas);
+					Vector tempN = (Vector<String>) ois.readObject();
+					tempN.addAll(clientes);
+					ois.close();
+					ventas.clear();
+					ventas.addAll(temp);
+					clientes.clear();
+					clientes.addAll(tempN);
+				}
+				oos = new ObjectOutputStream(new FileOutputStream(archivo));
+				oos.writeObject(ventas);
+				oos.writeObject(clientes);
+				clientes.clear();
+				ventas.clear();
+				listaClientes.setListData(ventas);
+			} catch (IOException ex) {
+				Logger.getLogger(jUIGestor.class.getName()).log(Level.SEVERE, null, ex);
+			} catch (ClassNotFoundException ex) {
+				Logger.getLogger(jUIGestor.class.getName()).log(Level.SEVERE, null, ex);
+			} finally {
+				try {
+					oos.close();
+				} catch (IOException ex) {
+					Logger.getLogger(jUIGestor.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			}
+		} else {
+			JOptionPane.showMessageDialog(this, "No hay información que guardar", "Error al guardar", JOptionPane.ERROR_MESSAGE);
+		}
+	}
 
 	private void restoreUI() {
 		toggleControls(false);
@@ -825,6 +963,8 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonCancelar;
     private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonGuardar;
+    private javax.swing.JButton botonMostrar;
     private static javax.swing.JButton botonPrimero;
     private javax.swing.JButton botonSalir;
     private static javax.swing.JButton botonSiguiente;
@@ -867,4 +1007,5 @@ public class jUIGestor extends javax.swing.JFrame {
     private javax.swing.ButtonGroup storageGroup;
     private javax.swing.JLabel storageLabel;
     // End of variables declaration//GEN-END:variables
+
 }

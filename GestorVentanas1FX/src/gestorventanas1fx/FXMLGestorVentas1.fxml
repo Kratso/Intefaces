@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" cacheShape="false" disable="true" prefHeight="534.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
+<AnchorPane id="AnchorPane" cacheShape="false" disable="true" prefHeight="534.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorventanas1fx.FXMLGestorVentas1Controller">
    <children>
       <Label layoutX="35.0" layoutY="36.0" text="Nombre" />
       <TextField fx:id="nombreField" layoutX="95.0" layoutY="31.0" onKeyPressed="#nombreFieldKeyPressed" />
@@ -54,7 +58,7 @@
       <CheckBox fx:id="otros3" layoutX="654.0" layoutY="330.0" mnemonicParsing="false" text="Soporte Thunderbolt" />
       <CheckBox fx:id="otros4" layoutX="654.0" layoutY="358.0" mnemonicParsing="false" text="BU/Restore" />
       <Button fx:id="botonCancelar" layoutX="649.0" layoutY="402.0" onAction="#botonCancelarOnActionEvent" text="_Cancelar" />
-      <Button fx:id="botonSalir" layoutX="649.0" layoutY="439.0" onAction="#botonSalirOnActionEvent" prefHeight="26.0" prefWidth="82.0" text="_Salir" />
+      <Button fx:id="botonSalir" layoutX="649.0" layoutY="439.0" onAction="#botonSalirOnActionEvent" prefHeight="26.0" prefWidth="60.0" text="_Salir" />
       <Button fx:id="botonAniadir" layoutX="30.0" layoutY="415.0" onAction="#botonAñadirOnActionEvent" text="_Añadir" />
       <Button fx:id="botonBuscar" layoutX="104.0" layoutY="415.0" mnemonicParsing="true" onAction="#botonBuscarOnActionEvent" text="_Buscar" />
       <Button fx:id="botonEliminar" layoutX="187.0" layoutY="415.0" onAction="#botonEliminarOnActionEvent" text="_Eliminar" />

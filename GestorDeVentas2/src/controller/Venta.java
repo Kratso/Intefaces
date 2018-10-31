@@ -3,36 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestorventanas1fx;
+package controller;
 
-import javafx.scene.control.Toggle;
+import java.io.Serializable;
 
 /**
  *
  * @author alumno
  */
-public class Venta {
-	private String localizacion;
-	private Toggle procesador;
-	private Toggle ram;
-	private Toggle monitor;
-	private Toggle almacenamiento;
+public class Venta implements Serializable {
+	private int localizacion;
+	private int procesador;
+	private int ram;
+	private int monitor;
+	private int almacenamiento;
 	private boolean otro1;
 	private boolean otro2;
 	private boolean otro3;
 	private boolean otro4;
 
-	
-
-	public String getLocalizacion() {
-		return localizacion;
-	}
-
-	public void setLocalizacion(String localizacion) {
-		this.localizacion = localizacion;
-	}
-
-	public Venta(String localizacion, Toggle procesador, Toggle ram, Toggle monitor, Toggle almacenamiento, boolean otro1, boolean otro2, boolean otro3, boolean otro4) {
+	public Venta(int localizacion, int procesador, int ram, int monitor, int almacenamiento, boolean otro1, boolean otro2, boolean otro3, boolean otro4) {
 		this.localizacion = localizacion;
 		this.procesador = procesador;
 		this.ram = ram;
@@ -44,39 +34,45 @@ public class Venta {
 		this.otro4 = otro4;
 	}
 
-	public Toggle getProcesador() {
+	public int getLocalizacion() {
+		return localizacion;
+	}
+
+	public void setLocalizacion(int localizacion) {
+		this.localizacion = localizacion;
+	}
+
+	public int getProcesador() {
 		return procesador;
 	}
 
-	public void setProcesador(Toggle procesador) {
+	public void setProcesador(int procesador) {
 		this.procesador = procesador;
 	}
 
-	public Toggle getRam() {
+	public int getRam() {
 		return ram;
 	}
 
-	public void setRam(Toggle ram) {
+	public void setRam(int ram) {
 		this.ram = ram;
 	}
 
-	public Toggle getMonitor() {
+	public int getMonitor() {
 		return monitor;
 	}
 
-	public void setMonitor(Toggle monitor) {
+	public void setMonitor(int monitor) {
 		this.monitor = monitor;
 	}
 
-	public Toggle getAlmacenamiento() {
+	public int getAlmacenamiento() {
 		return almacenamiento;
 	}
 
-	public void setAlmacenamiento(Toggle almacenamiento) {
+	public void setAlmacenamiento(int almacenamiento) {
 		this.almacenamiento = almacenamiento;
 	}
-
-	
 
 	public boolean isOtro1() {
 		return otro1;

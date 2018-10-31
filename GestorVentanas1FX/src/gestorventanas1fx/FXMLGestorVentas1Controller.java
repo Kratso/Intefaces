@@ -31,7 +31,6 @@ import javafx.scene.input.KeyEvent;
  */
 public class FXMLGestorVentas1Controller implements Initializable {
 
-	private final Venta ventaBase = new Venta(0, 2, 1, 0, 1, true, true, false, false);
 	private final Vector<String> clientes = new Vector<>();
 	private final Vector<Venta> ventas = new Vector<>();
 	private final ArrayList<Venta> busqueda = new ArrayList<>();
@@ -147,19 +146,25 @@ public class FXMLGestorVentas1Controller implements Initializable {
 
 	@FXML
 	private ToggleGroup storageGroup;
+	
+	private final Venta ventaBase = new Venta("Villalba", proc3, ram2, monitor1, storage4, true, true, false, false);
+
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		listaClientes = new ListView<String>();
 		ObservableList<String> items = FXCollections.observableArrayList(
-				"Villalba","Alpedrete","Moralzarzal","Galapagar","Guadarrama");
+				"Villalba", "Alpedrete", "Moralzarzal", "Galapagar", "Guadarrama");
 		listaClientes.setItems(items);
 	}
 
 	@FXML
 	private void nombreFieldKeyPressed(KeyEvent evt) {
-		if (evt.getCode().equals(KeyCode.ENTER) && valido(nombreField.getText())) { //Si se pulsa ENTER con un nombre valido
-
+		if (evt.getCode().equals(KeyCode.ENTER) && valido(nombreField.getText())) {
+			setVenta(ventaBase, true);
+			localidad.requestFocus();
+			toggleControls(true);
+			botonEliminar.setDisable(false);
 		}
 	}
 
@@ -216,4 +221,50 @@ public class FXMLGestorVentas1Controller implements Initializable {
 	private boolean valido(String text) {
 		return text.matches("([a-zA-Z.\\-]+[ ]?)+");
 	}
+
+	private void toggleControls(boolean toggle) {
+		localidad.setDisable(!toggle);
+
+		proc1.setDisable(!toggle);
+		proc2.setDisable(!toggle);
+		proc3.setDisable(!toggle);
+		proc4.setDisable(!toggle);
+
+		monitor1.setDisable(!toggle);
+		monitor2.setDisable(!toggle);
+		monitor3.setDisable(!toggle);
+		monitor4.setDisable(!toggle);
+
+		ram1.setDisable(!toggle);
+		ram2.setDisable(!toggle);
+		ram3.setDisable(!toggle);
+		ram4.setDisable(!toggle);
+
+		storage1.setDisable(!toggle);
+		storage2.setDisable(!toggle);
+		storage3.setDisable(!toggle);
+		storage4.setDisable(!toggle);
+
+		otros1.setDisable(!toggle);
+		otros2.setDisable(!toggle);
+		otros3.setDisable(!toggle);
+		otros4.setDisable(!toggle);
+
+		botonAniadir.setDisable(!toggle);
+		botonBuscar.setDisable(!toggle);
+	}
+
+	private void setVenta(Venta ventaBase, boolean b) {
+		if(b)
+			localidad.getSelectionModel().select(ventaBase.getLocalizacion());
+		processorGroup.selectToggle(ventaBase.getProcesador());
+		ramGroup.selectToggle(ventaBase.getRam());
+		monitorGroup.selectToggle(ventaBase.getMonitor());
+		storageGroup.selectToggle(ventaBase.getAlmacenamiento());
+		otros1.setSelected(ventaBase.isOtro1());
+		otros2.setSelected(ventaBase.isOtro2());
+		otros3.setSelected(ventaBase.isOtro3());
+		otros4.setSelected(ventaBase.isOtro4());
+	}
+
 }
