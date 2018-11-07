@@ -791,6 +791,7 @@ public class jUIGestor extends javax.swing.JFrame {
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
 		guardarDatos();
+		restoreUI(); 
     }//GEN-LAST:event_botonGuardarActionPerformed
 
 	private void guardarDatos() {
