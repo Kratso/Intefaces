@@ -10,11 +10,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javax.swing.JTextField;
 
 /**
  *
@@ -81,7 +79,7 @@ public class jFormController {
 	}
 
 	private static int testNombre(String content) {
-		if (content.trim().matches("([A-Za-z]+[ ]?)+")) {
+		if (content.trim().matches("([A-Za-z]+[ ]?)*")) {
 			return NO_ERROR;
 		} else {
 			return CONTENT_ERROR;
@@ -118,7 +116,7 @@ public class jFormController {
 	}
 
 	private static int testApellido(String content) {
-		if (content.trim().matches("([A-Za-z.\\-]+[ ]?)+")) {
+		if (content.trim().matches("([A-Za-z.\\-]+[ ]?)*")) {
 			return NO_ERROR;
 		} else {
 			return CONTENT_ERROR;
@@ -127,7 +125,7 @@ public class jFormController {
 
 	static void instanceConnection() {
 		try {
-			c = DriverManager.getConnection("jdbc:mysql://localhost/interface", "root", "manager");
+			c = DriverManager.getConnection("", "root", "manager");
 			c.setAutoCommit(false);
 
 		} catch (SQLException e) {
@@ -150,7 +148,7 @@ public class jFormController {
 	}
 	
 	static void updateCliente(String data) throws SQLException {
-		String[] info = data.replaceAll("[\\\\[\\\\](\\\\'\\\\( \\\\);]","").split("[,]");
+		String[] info = data.replaceAll("[\\\\[\\\\](\\\\'\\\\(\\\\);]","").split("[,]");
 		System.out.println(info.length);
 		List<String> mod = new ArrayList<>(Arrays.asList(info));
 		for(String s : mod)
@@ -168,7 +166,7 @@ public class jFormController {
 		ps.setString(12, mod.get(0));
 		
 		ps.executeUpdate();
-		c.commit();
+		
 	}
 
 	static String[] recuperarFila(String text) throws SQLException {
@@ -191,5 +189,17 @@ public class jFormController {
 			System.out.println(Arrays.toString(result));
 		}
 		return result;
+	}
+
+	static boolean borrarCliente(String codigo) throws SQLException {
+		String sql = "DELETE FROM Clientes WHERE Codigo = ?";
+		PreparedStatement ps = c.prepareStatement(sql);
+		ps.setString(1, codigo);
+		ps.execute();
+		return true;
+	}
+	
+	static void commit() throws SQLException{
+		c.commit();
 	}
 }

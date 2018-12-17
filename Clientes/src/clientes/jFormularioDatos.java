@@ -91,6 +91,11 @@ public class jFormularioDatos extends javax.swing.JFrame {
                 fieldCodigoFocusLost(evt);
             }
         });
+        fieldCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldCodigoActionPerformed(evt);
+            }
+        });
         fieldCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fieldCodigoKeyPressed(evt);
@@ -273,6 +278,11 @@ public class jFormularioDatos extends javax.swing.JFrame {
         itemPorCodigoHL.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         itemPorCodigoHL.setMnemonic('C');
         itemPorCodigoHL.setText("Por Código");
+        itemPorCodigoHL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPorCodigoHLActionPerformed(evt);
+            }
+        });
         jMenu2.add(itemPorCodigoHL);
 
         menuPorCodigo.setMnemonic('L');
@@ -445,9 +455,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 	 *	Godspeed, traveller.
 	 */
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+		String datum = validar();
 		if (operation == ALTAS_OPERATION) {
-			String datum = validar();
-
 			try {
 				if (datum != null) {
 					jFormController.insertCliente(datum);
@@ -458,13 +467,13 @@ public class jFormularioDatos extends javax.swing.JFrame {
 					JOptionPane.showMessageDialog(this, "Inserción Correcta", "Inserción Correcta", JOptionPane.INFORMATION_MESSAGE);
 					fieldCodigo.setEnabled(true);
 					fieldCodigo.grabFocus();
+					jFormController.commit();
 				}
 				return;
 			} catch (SQLException ex) {
 				warningPane("Ha ocurrido un Error SQL", "Ha ocurrido un error al insertar\n" + ex.getMessage());
 			}
 		} else if (operation == MOD_OPERATION) {
-			String datum = validar();
 			try {
 				if (datum != null) {
 					jFormController.updateCliente(datum);
@@ -475,11 +484,35 @@ public class jFormularioDatos extends javax.swing.JFrame {
 					JOptionPane.showMessageDialog(this, "Modificación Correcta", "Modificación Correcta", JOptionPane.INFORMATION_MESSAGE);
 					fieldCodigo.setEnabled(true);
 					fieldCodigo.grabFocus();
+					jFormController.commit();
 				}
 				return;
 			} catch (SQLException ex) {
 				warningPane("Ha ocurrido un Error SQL", "Ha ocurrido un error al insertar\n" + ex.getMessage());
 			}
+		} else if (operation == BAJAS_OPERATION) {
+			int operacion = JOptionPane
+					.showConfirmDialog(this,
+									   "Esta operación es permanente,"
+									   + " ¿seguro que quiere eliminar el"
+									   + " registro?",
+									   "ESTA A PUNTO DE "
+									   + "ELIMINAR UN REGISTRO",
+									   JOptionPane.YES_NO_CANCEL_OPTION);
+			if (operacion == JOptionPane.OK_OPTION) {
+				try {
+					if (jFormController.borrarCliente(fieldCodigo.getText())) {
+						JOptionPane.showMessageDialog(this,
+												  "Cliente Borrado",
+												  "Borrado Exitoso",
+												  JOptionPane.INFORMATION_MESSAGE);
+						jFormController.commit();
+					}
+				} catch (SQLException ex) {
+					warningPane("Ha ocurrido un Error SQL", "Ha ocurrido un error al insertar\n" + ex.getMessage());
+				}
+			}
+
 		}
     }//GEN-LAST:event_btnAceptarActionPerformed
 
@@ -494,9 +527,12 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		}
 		String datum = "(";
 		for (JTextField jtf : CONTROLS_ARRAY) {
-			datum += "\'" + jtf.getText() + "\',";
+			if(jtf.equals(fieldNif))
+				datum += "\'" + jtf.getText() + fieldLetraNif.getText() + "\',";
+			else
+				datum += "\'" + jtf.getText() + "\',";
 		}
-		datum += 0 + ");";
+		datum += fieldtotal.getText() + ");";
 		return datum;
 	}
 
@@ -505,6 +541,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		resetFields();
 		errorCode = NO_ERROR;
 		fieldCodigo.grabFocus();
+		toggleControls(false);
+		fieldCodigo.setEnabled(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
 //NIF letter generator on key stroke
@@ -519,6 +557,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
 
     private void fieldCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fieldCodigoKeyPressed
 		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+			for(int i = 0; i < 6 - fieldCodigo.getText().length(); i++)
+				fieldCodigo.setText("0" + fieldCodigo.getText());
 			try {
 				if (jFormController.testForCode(fieldCodigo.getText()) && operation == ALTAS_OPERATION) {
 					System.out.println("Ya hay un codigo	");
@@ -540,20 +580,23 @@ public class jFormularioDatos extends javax.swing.JFrame {
 					btnCancelar.setEnabled(true);
 					if (operation == MOD_OPERATION) {
 						toggleControls(true);
-						String[] data = jFormController.recuperarFila(fieldCodigo.getText());
-						System.out.println(Arrays.toString(data));
-						fieldNif.setText(data[1]);
-						fieldNombre.setText(data[2]);
-						fieldApellido.setText(data[3]);
-						fieldDomicilio.setText(data[4]);
-						fieldCP.setText(data[5]);
-						fieldLocalidad.setText(data[6]);
-						fieldTlfn.setText(data[7]);
-						fieldMovil.setText(data[8]);
-						fieldFax.setText(data[9]);
-						fieldMail.setText(data[10]);
+						fieldCodigo.setEnabled(false);
 					}
+					String[] data = jFormController.recuperarFila(fieldCodigo.getText());
+					System.out.println(Arrays.toString(data));
+					fieldNif.setText(data[1].substring(0, data[1].length()-1));
+					fieldLetraNif.setText(data[1].charAt(data[1].length() - 1) + "");
+					fieldNombre.setText(data[3]);
+					fieldApellido.setText(data[2]);
+					fieldDomicilio.setText(data[4]);
+					fieldCP.setText(data[5]);
+					fieldLocalidad.setText(data[6]);
+					fieldTlfn.setText(data[7]);
+					fieldMovil.setText(data[8]);
+					fieldFax.setText(data[9]);
+					fieldMail.setText(data[10]);
 					fieldNif.grabFocus();
+
 				}
 			} catch (SQLException sqle) {
 				warningPane("Error SQL", "Se ha producido un ERROR SQL\n" + sqle.getMessage());
@@ -684,8 +727,8 @@ public class jFormularioDatos extends javax.swing.JFrame {
     private void itemAltasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAltasActionPerformed
 		CONTROLS_ARRAY[0] = fieldCodigo;
 		CONTROLS_ARRAY[1] = fieldNif;
-		CONTROLS_ARRAY[2] = fieldNombre;
-		CONTROLS_ARRAY[3] = fieldApellido;
+		CONTROLS_ARRAY[3] = fieldNombre;
+		CONTROLS_ARRAY[2] = fieldApellido;
 		CONTROLS_ARRAY[4] = fieldDomicilio;
 		CONTROLS_ARRAY[5] = fieldCP;
 		CONTROLS_ARRAY[6] = fieldLocalidad;
@@ -696,14 +739,14 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		operation = ALTAS_OPERATION;
 		fieldCodigo.setEnabled(true);
 		fieldCodigo.grabFocus();
-		setTitle(getTitle() + " - Altas");
+		setTitle("Prueba Entrada de Datos - Altas");
     }//GEN-LAST:event_itemAltasActionPerformed
 
     private void itemBajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBajasActionPerformed
 		CONTROLS_ARRAY[0] = fieldCodigo;
 		CONTROLS_ARRAY[1] = fieldNif;
-		CONTROLS_ARRAY[2] = fieldNombre;
-		CONTROLS_ARRAY[3] = fieldApellido;
+		CONTROLS_ARRAY[3] = fieldNombre;
+		CONTROLS_ARRAY[2] = fieldApellido;
 		CONTROLS_ARRAY[4] = fieldDomicilio;
 		CONTROLS_ARRAY[5] = fieldCP;
 		CONTROLS_ARRAY[6] = fieldLocalidad;
@@ -714,10 +757,34 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		operation = BAJAS_OPERATION;
 		fieldCodigo.setEnabled(true);
 		fieldCodigo.grabFocus();
-		setTitle(getTitle() + " - Bajas");
+		setTitle("Prueba Entrada de Datos - Bajas");
     }//GEN-LAST:event_itemBajasActionPerformed
 
     private void itemModificacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemModificacionesActionPerformed
+		CONTROLS_ARRAY[0] = fieldCodigo;
+		CONTROLS_ARRAY[1] = fieldNif;
+		CONTROLS_ARRAY[3] = fieldNombre;
+		CONTROLS_ARRAY[2] = fieldApellido;
+		CONTROLS_ARRAY[4] = fieldDomicilio;
+		CONTROLS_ARRAY[5] = fieldCP;
+		CONTROLS_ARRAY[6] = fieldLocalidad;
+		CONTROLS_ARRAY[7] = fieldTlfn;
+		CONTROLS_ARRAY[8] = fieldMovil;
+		CONTROLS_ARRAY[9] = fieldFax;
+		CONTROLS_ARRAY[10] = fieldMail;
+		operation = MOD_OPERATION;
+		fieldCodigo.setEnabled(true);
+		fieldCodigo.grabFocus();
+		setTitle("Prueba Entrada de Datos - Modificaciones");
+    }//GEN-LAST:event_itemModificacionesActionPerformed
+
+    private void itemPorCodigoHLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPorCodigoHLActionPerformed
+        operation = CONSULTAS_OPERATION;
+		resetFields();
+		toggleControls(false);
+		btnAceptar.setEnabled(true);
+		btnCancelar.setEnabled(true);
+		fieldCodigo.setEditable(true);
 		CONTROLS_ARRAY[0] = fieldCodigo;
 		CONTROLS_ARRAY[1] = fieldNif;
 		CONTROLS_ARRAY[2] = fieldNombre;
@@ -729,11 +796,12 @@ public class jFormularioDatos extends javax.swing.JFrame {
 		CONTROLS_ARRAY[8] = fieldMovil;
 		CONTROLS_ARRAY[9] = fieldFax;
 		CONTROLS_ARRAY[10] = fieldMail;
-		operation = MOD_OPERATION;
-		fieldCodigo.setEnabled(true);
-		fieldCodigo.grabFocus();
-		setTitle(getTitle() + " - Modificaciones");
-    }//GEN-LAST:event_itemModificacionesActionPerformed
+		setTitle(getTitle() + " - Consultas por Código");
+    }//GEN-LAST:event_itemPorCodigoHLActionPerformed
+
+    private void fieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldCodigoActionPerformed
 
 	private void resetFields() { //resets all text fields
 		fieldApellido.setText(null);
