@@ -12,17 +12,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author alumno
  */
-public class ConectorSQL implements Serializable{
-
-	
+public class ConectorSQL implements Serializable {
 
 	public Connection con;
 	public Statement st;
@@ -36,15 +38,15 @@ public class ConectorSQL implements Serializable{
 		sts = st;
 		con.setAutoCommit(false);
 	}
-	
-	public void commit() throws SQLException{
+
+	public void commit() throws SQLException {
 		con.commit();
 	}
-	
-	public void rollback() throws SQLException{
+
+	public void rollback() throws SQLException {
 		con.rollback();
 	}
-	
+
 	boolean checkCodigo(String text) throws SQLException {
 		String sql = "select codigo from proveedores where codigo = " + text;
 		ResultSet rs = st.executeQuery(sql);
@@ -85,7 +87,7 @@ public class ConectorSQL implements Serializable{
 		String sentencia = "delete from clientes where codigo = " + codigo + ";";
 		st.executeUpdate(sentencia);
 	}
-	
+
 	public String[] sacarDatosProveedores(String codigo) throws SQLException {
 		String all = "select * from proveedores where codigo=" + codigo;
 		/*String ape = "select apellidos from clientes where codigo="+codigo;
@@ -156,7 +158,7 @@ public class ConectorSQL implements Serializable{
 		String[] datos = {nif, ape, nom, dom, cp, loc, tel, movil, fax, email, total + ""};
 		return datos;
 	}
-	
+
 	public static String[] sacarDatosClientesSt(String codigo) throws SQLException {
 		String all = "select * from clientes where codigo=" + codigo;
 		/*String ape = "select apellidos from clientes where codigo="+codigo;
@@ -196,63 +198,64 @@ public class ConectorSQL implements Serializable{
 		String[] datos = {nif, ape, nom, dom, cp, loc, tel, movil, fax, email};
 		return datos;
 	}
-	
-	public List<Articulo> devolverArticulos() throws SQLException{
+
+	public List<Articulo> devolverArticulos() throws SQLException {
 		String sql = "SELECT * FROM articulo";
 		ResultSet rs = st.executeQuery(sql);
 		List l = new ArrayList<Articulo>();
-		while(rs.next())
+		while (rs.next()) {
 			l.add(new Articulo(rs.getString("codigo"), rs.getString("descripcion"),
-					rs.getInt("stock"), rs.getInt("stock_min"), rs.getDouble("pc"),
-					rs.getDouble("pv")));
+							   rs.getInt("stock"), rs.getInt("stock_min"), rs.getDouble("pc"),
+							   rs.getDouble("pv")));
+		}
 		return l;
 	}
-	
-	public void meterArticulo(String codigoArticulo, String codigoPJ, String Cantidad, boolean clienteProveedor) throws SQLException{
+
+	public void meterArticulo(String codigoArticulo, String codigoPJ, String Cantidad, boolean clienteProveedor) throws SQLException {
 		int cantidad = Integer.parseInt(Cantidad);
-		
+
 		String sql = clienteProveedor
-					 ? "INSERT INTO historico (id_cliente,id_proveedor,id_articulo,cantidad,fecha) VALUES  (?,NULL,?,?,?)" 
+					 ? "INSERT INTO historico (id_cliente,id_proveedor,id_articulo,cantidad,fecha) VALUES  (?,NULL,?,?,?)"
 					 : "INSERT INTO historico (id_cliente,id_proveedor,id_articulo,cantidad,fecha) VALUES (NULL,?,?,?,?)";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, codigoPJ);
 		ps.setString(2, codigoArticulo);
 		ps.setInt(3, cantidad);
 		ps.setDate(4, new java.sql.Date(new Date().getTime()));
-		
+
 		ps.executeUpdate();
-		
+
 		String sql2 = clienteProveedor
-					  ?"SELECT stock, pv FROM articulo WHERE codigo = \'" + codigoArticulo + "\'"
-					  :"SELECT stock, pc FROM articulo WHERE codigo = \'" + codigoArticulo + "\'";
-		
+					  ? "SELECT stock, pv FROM articulo WHERE codigo = \'" + codigoArticulo + "\'"
+					  : "SELECT stock, pc FROM articulo WHERE codigo = \'" + codigoArticulo + "\'";
+
 		ResultSet rs = st.executeQuery(sql2);
-		
+
 		rs.next();
-		
+
 		int stock = rs.getInt(1);
 		double pvc = rs.getDouble(2);
-		
+
 		sql = clienteProveedor
 			  ? "UPDATE articulo SET stock = stock - ? WHERE codigo = ?"
 			  : "UPDATE articulo SET stock = stock + ? WHERE codigo = ?";
-		
+
 		ps = con.prepareStatement(sql);
-		
+
 		ps.setInt(1, cantidad);
 		ps.setString(2, codigoArticulo);
-		
+
 		ps.executeUpdate();
-		
+
 		sql = clienteProveedor
-			  ? "UPDATE clientes SET total_ventas = total_ventas + ? WHERE codigo = ?" 
+			  ? "UPDATE clientes SET total_ventas = total_ventas + ? WHERE codigo = ?"
 			  : "UPDATE proveedores SET total_ventas = total_ventas + ? WHERE codigo = ?";
-		
+
 		ps = con.prepareStatement(sql);
-		
+
 		ps.setDouble(1, (cantidad * pvc));
 		ps.setString(2, codigoPJ);
-		
+
 		ps.executeUpdate();
 	}
 
@@ -261,45 +264,66 @@ public class ConectorSQL implements Serializable{
 		ResultSet rs = st.executeQuery(sql);
 		return rs.next();
 	}
-	
-	public String[] getArticuloByCodigo(String codigo) throws SQLException{
+
+	public String[] getArticuloByCodigo(String codigo) throws SQLException {
 		String sql = "SELECT * FROM articulo WHERE codigo = \'" + codigo + "\'";
 		ResultSet rs = st.executeQuery(sql);
 		String[] articulo = new String[6];
-		if(rs.next()){
-		articulo[0] = rs.getString(1);
-		articulo[1] = rs.getString(2);
-		articulo[2] = rs.getInt(3) + "";
-		articulo[3] = rs.getInt(4) + "";
-		articulo[4] = rs.getDouble(5) + "";
-		articulo[5] = rs.getDouble(6) + "";
-		return articulo;
-		}
-		else 
+		if (rs.next()) {
+			articulo[0] = rs.getString(1);
+			articulo[1] = rs.getString(2);
+			articulo[2] = rs.getInt(3) + "";
+			articulo[3] = rs.getInt(4) + "";
+			articulo[4] = rs.getDouble(5) + "";
+			articulo[5] = rs.getDouble(6) + "";
+			return articulo;
+		} else {
 			return null;
+		}
 	}
 
 	public boolean checkCodigoCliente(String text) throws SQLException {
-	String sql = "select codigo from clientes where codigo = " + text;
+		String sql = "select codigo from clientes where codigo = " + text;
 		ResultSet rs = st.executeQuery(sql);
-		return rs.next();	
+		return rs.next();
 	}
 
-
-	public String generarLetraDNI(String dni){
+	public String generarLetraDNI(String dni) {
 		String cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
 		int dnii = Integer.parseInt(dni) % 23;
 		return cadena.charAt(dnii) + "";
 	}
-	
-	public void meterVentaInternet(List<Articulo> compra, String codCliente) throws SQLException{
-		String sql = "INSERT INTO pedidosInternet VALUES(?,?,?,?)";
-		for(Articulo a : compra){
+
+	public void meterVentaInternet(List<Articulo> compra, String codCliente) throws SQLException {
+		String sql = "INSERT INTO pedidosInternet (Cliente, Articulo, ud, fecha) VALUES(?,?,?,?)";
+		for (Articulo a : compra) {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, codCliente);
 			ps.setString(2, a.codigo);
 			ps.setString(3, a.cantidad);
 			ps.setDate(4, new java.sql.Date(new Date().getTime()));
+			ps.executeUpdate();
 		}
+		con.commit();
+	}
+
+	public List<Pedido> getPedidosEntre(String min, String max, String cliente) throws SQLException {
+		List<Pedido> res = new ArrayList<Pedido>();
+
+		String sql = "SELECT * FROM pedidosInternet where Cliente = \'"
+					 + cliente
+					 + "\' and Fecha BETWEEN \'"
+					 + min
+					 + "\' AND \'"
+					 + max
+					 + "\'";
+
+		ResultSet rs = st.executeQuery(sql);
+
+		while (rs.next()) {
+			res.add(new Pedido(cliente, rs.getString("Articulo"), rs.getInt("ud"), rs.getString("Fecha")));
+		}
+
+		return res;
 	}
 }

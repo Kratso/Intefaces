@@ -1,26 +1,42 @@
 <%-- 
-    Document   : factura
-    Created on : 29-ene-2019, 11:05:32
+    Document   : extracto
+    Created on : 31-ene-2019, 12:13:55
     Author     : alumno
 --%>
 
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="almacen.*" %>
 <%HttpSession sesion = request.getSession();
 	ConectorSQL con = (ConectorSQL) sesion.getAttribute("con");
 	String[] cliente = (String[]) sesion.getAttribute("cliente");
-	ArrayList<Articulo> carrito = (ArrayList) sesion.getAttribute("carrito");
-	double total = 0;
+	String min = request.getParameter("start");
+	String max = request.getParameter("end");
+	sesion.setAttribute("max", max);
+	sesion.setAttribute("min", "min");
+	String code = (String) sesion.getAttribute("codCliente");
+	out.print(min);
+
+	List<Pedido> pedidos = con.getPedidosEntre(min, max, code);
 %>
 <!DOCTYPE html>
 <html>
-    <head>
+	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Factura</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <title><%=con == null
+							 ? "ERROR"
+							 : "Pedido Finalizado"%></title>
     </head>
     <body>
-        <div id="factura" style="text-align: center">
+        <h1>Extracto finalizado</h1>
+		<% if (!pedidos.isEmpty()) { %>
+		<p>Si desea imprimir el extracto, pulse <a href="extractoImprimir.jsp" target="_blank"><b>aquí</b></a> y seleccione en las opciones del navegador Imprimir.</p>
+		<p>Si no va a imprimir, puede <a href="index.jsp"><b>volver a la página principal</b></a>.</p>
+		<% }%>
+		<div id="factura" style="text-align: center">
 			<p>======================================================================================================================================</p>
 
 			<h1 style="text-align: center">Compañía Genérica S.L.</h1>
@@ -37,32 +53,30 @@
 			<p><%= cliente[4]%>, <%=cliente[5]%></p>
 
 			<p>======================================================================================================================================</p>
-
+			<% if (!pedidos.isEmpty()) { %>
 			<table style="margin: auto; text-align: center;">
 				<tr>
+					<th>Fecha</th>
 					<th>Artículo</th>
-					<th>Descripción</th>
 					<th>Cantidad</th>
-					<th>Precio</th>
-					<th>Importe</th>
 				</tr>	
-				<% for (Articulo a : carrito) {%>
+				<% for (Pedido p : pedidos) {%>
 				<tr>
-					<td><%=a.codigo%></td>
-					<td><%=a.descripcion%></td>
-					<td><%=a.cantidad%></td>
-					<td ><%=a.pv%></td>
-					<td><%=a.importe%></td>
+					<td><%=p.fecha%></td>
+					<td><%=p.articulo%></td>
+					<td><%=p.cantidad%></td>
 				</tr>
-				<% total += Double.parseDouble(a.importe);
-				}%>
+				<% } %>
 			</table>
 
 			<p>======================================================================================================================================</p>
 
-			<div style="text-align: right; margin-right: 100px;"><h2>Total Factura(IVA Incluído): <%=total%></h2></div>
-			<p>============================x==========================================================================================================</p>
+			<% } else {%>
+			<h1>No hay extractos disponibles entre las fechas <%=min%> y <%=max%></h1>
+			<% }%>
 
+			<a href="clienteExtracto.jsp">Sacar un nuevo Extracto</a>
+			<a href="index.jsp"><b>Volver a la página principal</b></a>
 
 		</div>
     </body>

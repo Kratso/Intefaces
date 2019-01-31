@@ -1,6 +1,6 @@
 <%-- 
-    Document   : pedidosClientes
-    Created on : 24-ene-2019, 14:02:56
+    Document   : extractosWeb
+    Created on : 31-ene-2019, 11:28:44
     Author     : alumno
 --%>
 
@@ -37,8 +37,8 @@
 			if (con != null) {
 
 		%>
-        <h1>Pedidos de Compañía Genérica SL</h1>
-		<form action="clientePedido.jsp" method="post">
+        <h1>Extractos de Compañía Genérica SL</h1>
+		<form action="clienteExtracto.jsp" method="post">
 			<div>
 				<p><b>Introduzca su código de cliente:</b></p>
 				<input id="codigo" type="text" name="clientCode" required autofocus pattern="^[a-zA-Z0-9]{1,6}$"/>
@@ -54,3 +54,4 @@
 		<a href="index.jsp"><b>Volver a la página principal</b></a>
     </body>
 </html>
+
